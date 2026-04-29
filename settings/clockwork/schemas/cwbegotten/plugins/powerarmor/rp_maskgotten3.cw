@@ -1,0 +1,1 @@
+{['angles;a0,-45.489387512207,0;'currentCharge;33;'class;'cw_powerarmor_scrapperking;'position;v-13569.497070312,-12562.77734375,-1128.9685058594;}}

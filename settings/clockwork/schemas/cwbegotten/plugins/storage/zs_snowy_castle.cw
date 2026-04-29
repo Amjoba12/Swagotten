@@ -1,0 +1,1 @@
+{['angles;a-0.0012479125289246,-165.25579833984,-0.0003662109375;'color;{['r;255;'b;255;'a;255;'g;255;}}'cash;0;'isMoveable;t'inventory;['begotten_blunderbuss;['40507;['condition;89.03;'Ammo;{}'value;10;}}}'startPos;v2352,2160,16;'position;v2351.8129882812,2160.7702636719,20.468162536621;'name;';'lockTier;3;}}

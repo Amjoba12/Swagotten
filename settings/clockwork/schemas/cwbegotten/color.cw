@@ -1,0 +1,1 @@
+['color;1;'contrast;1.0055096418733;'mulg;0;'addr;0;'addb;0;'mulb;0;'mulr;0;'enabled;f'addg;0;'brightness;0;}

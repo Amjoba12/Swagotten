@@ -1,0 +1,1 @@
+{['moveable;f'angles;a1.8534477064236e-08,90.000137329102,0;'color;['r;255;'b;255;'a;255;'g;255;}'model;'models/hunter/plates/plate075x5.mdl;'renderMode;0;'material;';'class;'prop_physics;'position;v368.69427490234,-6949.7436523438,199.90768432617;'renderFX;0;}}
