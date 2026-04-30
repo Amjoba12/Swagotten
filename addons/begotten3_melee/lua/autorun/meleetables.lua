@@ -3656,7 +3656,7 @@ AttackTables.GrocklingSacredStoneMaulAttackTable = {
 	["punchstrength"] = Angle(0,1,0),
 };
 
-AttackTables.ScrapWarAxe = {
+AttackTables.ScrapWarAxeAttackTable = {
 	["primarydamage"] = 82,
 	["dmgtype"] = 4,
 	["attacktype"] = "reg_swing",
@@ -4838,7 +4838,7 @@ AddTable("ScrapHalberdAttackTable", AttackTables.ScrapHalberdAttackTable)
 AddTable("SignOfDoomAttackTable", AttackTables.SignOfDoomAttackTable)
 AddTable("VoltsawsAttackTable", AttackTables.VoltsawsAttackTable)
 AddTable("ScrapDaggerAttackTable", AttackTables.ScrapDaggerAttackTable)
-AddTable("ScrapWarAxe", AttackTables.ScrapWarAxe)
+AddTable("ScrapWarAxeAttackTable", AttackTables.ScrapWarAxeAttackTable)
 
 -- Block Stat Tables
 
