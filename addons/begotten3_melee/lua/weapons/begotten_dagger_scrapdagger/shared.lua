@@ -35,8 +35,8 @@ SWEP.isDagger = true;
 /*---------------------------------------------------------
 	PrimaryAttack
 ---------------------------------------------------------*/
-SWEP.AttackTable = "IronDaggerAttackTable"
-SWEP.BlockTable = "IronDaggerBlockTable"
+SWEP.AttackTable = "ScrapDaggerAttackTable"
+SWEP.BlockTable = "ScrapDaggerBlockTable"
 
 function SWEP:CriticalAnimation()
 
