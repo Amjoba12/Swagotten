@@ -548,3 +548,24 @@ local ITEM = Clockwork.item:New("weapon_base");
 	ITEM.requiredFaiths = {"Faith of the Family"};
 	ITEM.kinisgerOverride = true;
 ITEM:Register();
+
+ITEM = Clockwork.item:New("weapon_base");
+	ITEM.name = "Example Guitar";
+	ITEM.model = "models/mad_max/guitar_warriot.mdl";
+	ITEM.weight = 8;
+	ITEM.uniqueID = "begotten_guitar_example";
+	ITEM.description = "Badass.";
+	ITEM.category = "Melee";
+	ITEM.iconoverride = "icons/melee/guitar.png"
+	ITEM.meleeWeapon = true;
+	ITEM.isAttachment = true;
+	ITEM.attachmentBone = "ValveBiped.Bip01_Spine2";
+	ITEM.attachmentOffsetAngles = Angle(87.73, 360, 170.9);
+	ITEM.attachmentOffsetVector = Vector(1.39, 5.08, -5.08);
+	
+	ITEM.attributes = {"aoebuff1", "weatherproof1"};
+
+	ITEM.excludedSubfactions = {"Philimaxio", "Knights of Sol", "Scrap Knight"};
+	ITEM.components = {breakdownType = "meltdown", items = {"wood", "fine_steel_chunks", "steel_chunks", "steel_chunks", "steel_chunks"}};
+	ITEM.requiredFactions = {"Scrappers"};
+ITEM:Register();
