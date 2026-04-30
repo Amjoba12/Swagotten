@@ -334,9 +334,32 @@ function cwRecipes:Craft(player, uniqueID, itemIDs, craftAmount)
 								player:SetLocalVar("cwProgressBarItem", nil);
 								
 								if cwCharacterNeeds then
-									player:HandleNeed("hunger", 0.5 * craftAmount);
-									player:HandleNeed("thirst", 1 * craftAmount);
-									player:HandleNeed("sleep", 0.5 * craftAmount);
+									if clothesItem and clothesItem.attributes and table.HasValue(clothesItem.attributes, "powerroutine") then
+										czynieArmor = false
+                                        player:HandleNeed("hunger", 0.25 * craftAmount);
+                                        player:HandleNeed("thirst", 0.5 * craftAmount);
+                                        player:HandleNeed("sleep", 0.25 * craftAmount);
+                                    end
+
+									if subfaction then
+										if subfaction == "Blackhands" then
+											player:HandleNeed("hunger", 0.25 * craftAmount);
+											player:HandleNeed("thirst", 0.5 * craftAmount);
+											player:HandleNeed("sleep", 0.25 * craftAmount);
+										else
+											if czynieArmor then
+												player:HandleNeed("hunger", 0.5 * craftAmount);
+												player:HandleNeed("thirst", 1 * craftAmount);
+												player:HandleNeed("sleep", 0.5 * craftAmount);
+											end
+										end
+									else
+										if czynieArmor then
+											player:HandleNeed("hunger", 0.5 * craftAmount);
+											player:HandleNeed("thirst", 1 * craftAmount);
+											player:HandleNeed("sleep", 0.5 * craftAmount);
+										end
+									end
 								end
 								
 								if (recipeTable.EndCraft) then
