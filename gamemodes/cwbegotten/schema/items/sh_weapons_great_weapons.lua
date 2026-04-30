@@ -527,3 +527,24 @@ local ITEM = Clockwork.item:New("weapon_base");
 	ITEM.includedSubfactions = {"Clan Grock"};
 	ITEM.kinisgerOverride = true;
 ITEM:Register();
+
+local ITEM = Clockwork.item:New("weapon_base");
+	ITEM.name = "Scrapper War Axe";
+	ITEM.model = "models/weapons/greataxe_scrap.mdl";
+	ITEM.weight = 5;
+	ITEM.uniqueID = "begotten_2h_great_scrapgreataxe";
+	ITEM.category = "Melee";
+	ITEM.description = "An ornate war axe made from Shagalaxian steel. This axe is often used by the sea raiders of Clan Harald. An old curse prevents weaklings from firmly grasping its handle.";
+	ITEM.iconoverride = "materials/begotten/ui/itemicons/haralder_war_axe.png"
+	ITEM.meleeWeapon = true;
+	ITEM.isAttachment = true;
+	ITEM.attachmentBone = "ValveBiped.Bip01_Spine2";
+	ITEM.attachmentOffsetAngles = Angle(90, 0, 281.37);
+	ITEM.attachmentOffsetVector = Vector(-5.66, 2.83, -30.41);
+	
+	ITEM.attributes = {"splinter"};
+	ITEM.components = {breakdownType = "meltdown", items = {"fine_steel_chunks", "wood", "wood"}}; -- use "breakdown" for other type
+	ITEM.requiredbeliefs = {"strength"};
+	ITEM.requiredFaiths = {"Faith of the Family"};
+	ITEM.kinisgerOverride = true;
+ITEM:Register();
