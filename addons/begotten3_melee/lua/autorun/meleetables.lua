@@ -2616,6 +2616,25 @@ AttackTables.SteelClawsAttackTable = {
 	["punchstrength"] = Angle(0,1,0),
 };
 
+AttackTables.VoltsawsAttackTable = {
+	["primarydamage"] = 60,
+	["dmgtype"] = 4,
+	["attacktype"] = "reg_swing",
+	["canaltattack"] = false,
+	["altattackdamagemodifier"] = nil,
+	["altattackpoisedamagemodifier"] = nil,
+	["armorpiercing"] = 25,
+	["altarmorpiercing"] = nil,
+	["poisedamage"] = 15,
+	["stabilitydamage"] = 0,
+	["takeammo"] = 4,
+	["delay"] = 0.7,
+	["striketime"] = 0.3,
+	["meleearc"] = 35,
+	["meleerange"] = 630,
+	["punchstrength"] = Angle(0,1,0),
+};
+
 -- Daggers
 
 AttackTables.IronDaggerAttackTable = {
@@ -2892,6 +2911,25 @@ AttackTables.HillGoreHuntingDaggerAttackTable = {
 	["altattackdamagemodifier"] = nil,
 	["altattackpoisedamagemodifier"] = nil,
 	["armorpiercing"] = 18,
+	["altarmorpiercing"] = nil,
+	["poisedamage"] = 0,
+	["stabilitydamage"] = 0,
+	["takeammo"] = 3,
+	["delay"] = 0.62,
+	["striketime"] = 0.2,
+	["meleearc"] = 15,
+	["meleerange"] = 475,
+	["punchstrength"] = Angle(0,1,0),
+};
+
+AttackTables.ScrapDaggerAttackTable = {
+	["primarydamage"] = 16,
+	["dmgtype"] = 16,
+	["attacktype"] = "reg_swing",
+	["canaltattack"] = false,
+	["altattackdamagemodifier"] = nil,
+	["altattackpoisedamagemodifier"] = nil,
+	["armorpiercing"] = 20,
 	["altarmorpiercing"] = nil,
 	["poisedamage"] = 0,
 	["stabilitydamage"] = 0,
@@ -3613,6 +3651,28 @@ AttackTables.GrocklingSacredStoneMaulAttackTable = {
 	["takeammo"] = 12,
 	["delay"] = 2.1,
 	["striketime"] = 0.95,
+	["meleearc"] = 45,
+	["meleerange"] = 900,
+	["punchstrength"] = Angle(0,1,0),
+};
+
+AttackTables.ScrapWarAxe = {
+	["primarydamage"] = 82,
+	["dmgtype"] = 4,
+	["attacktype"] = "reg_swing",
+	["canaltattack"] = true,
+	["altattackdamagemodifier"] = 1.1,
+	["altattackpoisedamagemodifier"] = 1.1,
+	["altattackstabilitydamagemodifier"] = 1.1,
+	["alttakeammo"] = 9,
+	["altmeleearc"] = 15,
+	["armorpiercing"] = 34,
+	["altarmorpiercing"] = 34,
+	["poisedamage"] = 35,
+	["stabilitydamage"] = 0,
+	["takeammo"] = 6,
+	["delay"] = 1.5,
+	["striketime"] = 0.65,
 	["meleearc"] = 45,
 	["meleerange"] = 900,
 	["punchstrength"] = Angle(0,1,0),
@@ -4776,6 +4836,9 @@ AddTable("TippedStaffAttackTable", AttackTables.TippedStaffAttackTable)
 AddTable("HeavyCleaverAttackTable", AttackTables.HeavyCleaverAttackTable)
 AddTable("ScrapHalberdAttackTable", AttackTables.ScrapHalberdAttackTable)
 AddTable("SignOfDoomAttackTable", AttackTables.SignOfDoomAttackTable)
+AddTable("VoltsawsAttackTable", AttackTables.VoltsawsAttackTable)
+AddTable("ScrapDaggerAttackTable", AttackTables.ScrapDaggerAttackTable)
+AddTable("ScrapWarAxe", AttackTables.ScrapWarAxe)
 
 -- Block Stat Tables
 
@@ -8075,6 +8138,60 @@ BlockTables.ScrapHalberdBlockTable = {
 	["partialbulletblock"] = false,
 };
 
+BlockTables.VoltsawsBlockTable = {
+	["guardblockamount"] = 10,
+	["specialeffect"] = false,
+	["blockeffect"] = "MetalSpark",
+	["blockeffectforward"] = 30,
+	["blockeffectpos"] = (Vector(5, 0, 60)),
+	["blockcone"] = 180,
+	["blockdamagetypes"] = {DMG_SLASH, DMG_CLUB, DMG_VEHICLE},
+	["partialbulletblock"] = false,
+	["poiseresistance"] = 5,
+	["raisespeed"] = 0.5,
+	["instantraise"] = false,
+	["parrydifficulty"] = 0.2,
+	["parrytakestamina"] = 10,
+	["canparry"] = true,
+	["candeflect"] = true,
+};
+
+BlockTables.IronDaggerBlockTable = {
+	["guardblockamount"] = 10,
+	["specialeffect"] = false,
+	["blockeffect"] = "MetalSpark",
+	["blockeffectforward"] = 30,
+	["blockeffectpos"] = (Vector(5, 0, 60)),
+	["blockcone"] = 135,
+	["blockdamagetypes"] = {DMG_SLASH, DMG_CLUB, DMG_VEHICLE},
+	["partialbulletblock"] = false,
+	["poiseresistance"] = 0,
+	["raisespeed"] = 1.25,
+	["instantraise"] = true,
+	["parrydifficulty"] = 0.25,
+	["parrytakestamina"] = 8,
+	["canparry"] = true,
+	["candeflect"] = true,
+};
+
+BlockTables.ScrapWarAxeBlockTable = {
+	["guardblockamount"] = 10,
+	["specialeffect"] = false,
+	["blockeffect"] = "GlassImpact",
+	["blockeffectforward"] = 25,
+	["blockeffectpos"] = (Vector(0, -10, 65)),
+	["blockcone"] = 180,
+	["blockdamagetypes"] = {DMG_SLASH, DMG_CLUB, DMG_VEHICLE},
+	["partialbulletblock"] = false,
+	["poiseresistance"] = 20,
+	["raisespeed"] = 1.75,
+	["instantraise"] = false,
+	["parrydifficulty"] = 0.2,
+	["parrytakestamina"] = 15,
+	["canparry"] = true,
+	["candeflect"] = true,
+};
+
 AddTable("SatanicWhipBlockTable", BlockTables.SatanicWhipBlockTable);
 AddTable("DefaultBlockTable", BlockTables.DefaultBlockTable) 
 AddTable("AdminTwistedMacheteBlockTable", BlockTables.AdminTwistedMacheteBlockTable)
@@ -8256,6 +8373,9 @@ AddTable("TippedStaffBlockTable", BlockTables.TippedStaffBlockTable)
 AddTable("HeavyCleaverBlockTable", BlockTables.HeavyCleaverBlockTable)
 AddTable("ScrapHalberdBlockTable", BlockTables.ScrapHalberdBlockTable)
 AddTable("SignOfDoomBlockTable", BlockTables.SignOfDoomBlockTable)
+AddTable("VoltsawsBlockTable", BlockTables.VoltsawsBlockTable)
+AddTable("ScrapDaggerBlockTable", BlockTables.ScrapDaggerBlockTable)
+AddTable("ScrapWarAxeBlockTable", BlockTables.ScrapWarAxeBlockTable)
 
 -- Shield Stat Tables
 
