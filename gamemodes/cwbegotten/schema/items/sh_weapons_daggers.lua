@@ -281,3 +281,24 @@ local ITEM = Clockwork.item:New("weapon_base");
 	ITEM.components = {breakdownType = "meltdown", items = {"iron_chunks"}};
 	ITEM.repairCostModifier = 0.3;
 ITEM:Register();
+
+local ITEM = Clockwork.item:New("weapon_base");
+	ITEM.name = "Scrap Dagger";
+	ITEM.model = "models/weapons/screwdriver.mdl";
+	ITEM.weight = 0.5;
+	ITEM.uniqueID = "begotten_dagger_scrapdagger";
+	ITEM.category = "Melee";
+	ITEM.description = "An elegant dagger of ancient manufacture, likely a prized relic from the Holy Hierarchy's collection.";
+	ITEM.iconoverride = "materials/begotten/ui/itemicons/elegant_dagger.png"
+	ITEM.meleeWeapon = true;
+	ITEM.isAttachment = true;
+	ITEM.attachmentBone = "ValveBiped.Bip01_R_Thigh";
+	ITEM.attachmentOffsetAngles = Angle(0, 355.03, 0);
+	ITEM.attachmentOffsetVector = Vector(-3.54, 0.71, 1.41);
+	ITEM.canUseOffhand = true;
+	ITEM.huntingValue = 3; -- Affects speed of skinning and mutilating corpses as well as the condition of the hides and meat, 1 = terrible, 3 = great
+	
+	ITEM.components = {breakdownType = "meltdown", items = {"steel_chunks"}};
+	ITEM.itemSpawnerInfo = {category = "Melee", rarity = 666, supercrateOnly = true};
+	ITEM.repairCostModifier = 0.3;
+ITEM:Register();
