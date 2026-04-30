@@ -1236,3 +1236,241 @@ local FACTION = Clockwork.faction:New("Deadlander");
 		["Engine Hummer"] = "Tuners",
 	};
 FACTION_DEADLANDER = FACTION:Register();
+
+local FACTION = Clockwork.faction:New("Scrappers");
+	local scrapperModels = {
+		male = {
+			clothes = "models/begotten/wanderers/wanderer_male.mdl",
+			heads = DEFAULT_MODELS.male.heads
+		},
+		female = {
+			clothes = "models/begotten/wanderers/wanderer_female.mdl",
+			heads = DEFAULT_MODELS.female.heads,
+		}
+	}
+	local blackHandModels = {
+		male = {
+			clothes = "models/begoyten/awesome/blackhand_male.mdl",
+			heads = "models/begotten/heads/male_61_wanderer.mdl"
+		},
+		female = {
+			clothes = "models/begoyten/awesome/blackhand_male.mdl",
+			heads = "models/begotten/heads/male_61_wanderer.mdl"
+		}
+	};
+	--[[
+	if game.GetMap() == "rp_district21" then
+		FACTION.disabled = false;
+	else
+		FACTION.disabled = true;
+		FACTION.hidden = true;
+	end
+	]]
+
+	FACTION.whitelist = true;
+	FACTION.useFullName = false;
+	FACTION.material = "begotten/factions/scrappersrustterence";
+	FACTION.color = Color(0, 0, 0);
+	FACTION.description = "Scrappers live by scavenging the ruins of cursed cities, abandoning faith and old rivalries to survive through fear, violence, and dominance. \nThey form ruthless Gangs led by Warlords who control territory, hoard Scrap as both currency and lifeblood, and use ancient machines to produce weapons, ammunition, and basic necessities. \nOften hired as mercenaries or turning on their employers, Scrappers leave behind stripped cities, broken alliances, and warzones wherever they roam.";	FACTION.availablefaiths = {"Faith of the Light"};
+	FACTION.enlist = true;
+	FACTION.promoteAcrossSubfactions = true;
+	FACTION.availablefaiths = {"Faith of the Light", "Faith of the Family", "Faith of the Dark"};
+	FACTION.subfactionsToAvailableFaiths = {["Voltists"] = {"Faith of the Light"}};
+	FACTION.singleGender = GENDER_MALE;
+	FACTION.characterLimit = 1; -- # of characters of this faction a player can have.
+	FACTION.ratio = 0.3;
+	--FACTION.imposters = true; -- Kinisgers should get enlisted through /enlist on Wanderer disguises. default
+	FACTION.disabled = false;
+	FACTION.names = "glazic";
+	FACTION.subfactions = {
+		{
+			name = "Scrogs",
+			subtitle = "Warriors of Scrap",
+			startingRank = 2,
+			description = "Scrogs are the most common class of scrapper footsoldiers found throughout the Ashlands. They are drawn from the lowest stock of scrapper society:  Lowly Ash-dwellers, failed scavengers, escaped slaves, and scrap-born youths raised among the warbands. Poorly equipped but numerous, Scrogs fight using Scraps weapons and armor pieced together from salvaged metal, broken machinery, and relics of past eras. Scrogs are used as shock troops and expendable infantry, sent forward in massed charges to overwhelm enemies through numbers and brutality. They ride no motor-chariots and hold no command, but advance on foot in loose packs, Discipline among them is minimal, maintained through fear of their warbosses and the promise of loot and scrap taken from the dead. Within scrapper warbands, Scrogs are considered disposable fucklets, yet it is from their ranks that stronger fighters sometimes rise to become Riggers or lieutenants of current Warbosses. Among the forces of the Hierarchy, Scrogs are remembered as ash-covered heathen retard's led in mass swarms by a Warboss in a motor-chariot.",
+			attributes = {
+				{Color(0, 225, 0), "(+) Starts with 30+ Max Health"},
+				{Color(0, 225, 0), "(+) Scrapper Ancestry: Starts with +10 maximum stamina"},
+				{Color(0, 225, 0), "(+) Starts at Sacrament Level 8."},
+				--{Color(0, 225, 0), "(+) Scrogs United: Deal 25% less damage to other Scrogs."},
+				{Color(0, 225, 0), "(+) Scrapper Warband: Increased 50% Faith Gain for dealing damage and sanity loss is reduced by 20%"}
+			},
+			models = scrapperModels
+		},
+		--[[{
+			name = "Slaver",
+			subtitle = "Brutal Masters of Men",
+			startingRank = 2,
+			description = "The wastes require toil, whether it be Glazic pilgrims upon their lord’s field, or slaves to turn crank and mine ore under a Scrapper yoke. Indeed, Slavers are the ruthless, cruel rowdy sorts that come to break captures with prod and pistol. Menacing marauders, Slavers usually themselves are former slaves that have proven themselves hardy enough to join the gangs that form under a Scrapper warband, who have shown excellent displays of brutality to their patrons and perhaps even their ruler. A slaver’s duty is to pillage the wastes looking for suitable hands, their interest for those who seem able to labor and work. A common saying among the Scrappers is that to take your chains off, you must put them on another - to leave slavery, become a Scrapper. Ultimately, for all under Piston, servitude is an ascending ladder. From his carrion-eating workers, his warriors, and his Foremen, all kneel to He.",
+			attributes = {
+				{Color(0, 225, 0), "(+) Starts with 25+ Max Health"},
+				{Color(0, 225, 0), "(+) Starts at Sacrament Level 8"},
+				{Color(0, 225, 0), "(+) Gains double the coin from selling slaves"},
+				{Color(0, 225, 0), "(+) Bomb Collar Technican: Can craft and create bomb collars which can only be used by fellow Slavers and can be attached on any player."},
+				{Color(225, 0, 0), "(-) Loyal Scrapper: Can only use Scrap Weapons and Armor"},
+				{Color(225, 0, 0), "(-) Slavers Mark: Everyone can recognize this player is a Slaver"}
+			},
+			models = scrapperModels
+		},]]--
+		{
+			name = "Greasers",
+			subtitle = "Skilled Craftsmen & Improvisers",
+			startingRank = 7,
+			description = "Scrapper society can be considered a machine of itself. For each person has a purpose and place, and without them in their roles, the great terrible beast that is a Scrapper Warband could not function. Greasers are the machinists who ensure this machine properly runs, hence their title. For if there were no Greasers, there would be no equipment, no collars, and none to manufacture bullets or scrap weaponry. They are the learned savage, the workman, and the scrap engineer that ensures any would-be Scrapper gang is ready to kill, scavenge, and pick from building as they do bone. Those who defy the Greasers are known to be punished by “Greasing” - a punishment where they are covered in machine oil and lit on fire as they run the Pipes.",
+			attributes = {
+				{Color(0, 225, 0), "(+) Starts with 20+ Max Health"},
+				{Color(0, 225, 0), "(+) Scrapper Ancestry: Starts with +10 maximum stamina"},
+				{Color(0, 225, 0), "(+) Starts at Sacrament Level 12"},
+				{Color(0, 225, 0), "(+) Has 10kg extra weight capacity"},
+				{Color(0, 225, 0), "(+) Resourceful: Unlocks cheaper recipes for some scrap equipment"},
+				{Color(0, 225, 0), "(+) Starts with the Ingenious, Craftsman and Smith beliefs unlocked"},
+				--{Color(225, 0, 0), "(-) Loyal Scrapper: Can only use Scrap Melee Weapons and Armor"}
+			},
+			models = scrapperModels
+		},
+		{
+			name = "Blackhands",
+			subtitle = "Tortured Slaves",
+			startingRank = 1,
+			description = "The slaves of Scrappers are notoriously over-worked and under-fed, with just over 80% dying in their first week of hard labor (by Scribe estimate). However, roughly 10% tend to survive decades, becoming extremely emaciated yet quite dexterous with their hands. This can be explained by the ancient Scrapper art of strapping slaves on a conveyor lane to produce components for their many machines. If the slave fails to do their part in the production line, they are tortured senselessly for hours, even days at a time. Oil soaks into their skin as they tinker with machined components every day, giving them their signature name. Over time, their physique changes as they are deprived of proper food or sleep, becoming husks fueled on stimulants and Anal Slop. At their seventh year of servitude, they appear to hit their peak efficiency, now being able to manipulate delicate components into functional machinery in less-than-half the time of a normal man, moving with truly inhuman speed. The result of such severe conditioning is that of the Blackhand, a weak and timid thing, yet useful and often irreplaceable at this stage of their life.",
+			attributes = {
+				{Color(0, 225, 0), "(+) Nimble Hands: 50% faster with all interactions and 25% faster reloading"},
+				{Color(0, 225, 0), "(+) Starts at Sacrament Level 6"},
+				{Color(0, 225, 0), "(+) Fueled by Smoke: -25% stamina drain and +10% sprint speed"},
+				{Color(0, 225, 0), "(+) Significantly reduced hunger/thirst drain"},
+				--{Color(0, 225, 0), "(+) Anal Slop Consumer: Eating Anal Slop has no downsides"},
+				{Color(225, 0, 0), "(-) Fragile: -25 Maximum HP and -10 Maximum Stamina"},
+				{Color(225, 0, 0), "(-) Sickly: Cannot learn any of the Fortitude beliefs"}
+			},
+			models = blackHandModels
+		},
+		{
+			name = "Voltists", 
+			startingRank = 11, 
+			subtitle = "Technological Fanatics & Transhumanists", 
+			description = "The Electrozombified of the Scrapper Warband think themselves above the struggle and desire that their brothers have fallen to. They see to the whims of the Program - a technological device above human understanding - and seek to combine its intelligence with the Mechanical God whence it is constructed.", 
+			attributes = {
+				{Color(0, 225, 0), "(+) Starts with +5 Max Health and +15 Max Stamina"},
+				{Color(0, 225, 0), "(+) Starts at Sacrament Level 11, with 'Voltism' unlocked"},
+			},
+			models = scrapperModels
+		},
+	}
+	
+	-- Called when a player is transferred to the faction.
+	function FACTION:OnTransferred(player, faction, name)
+		if (faction.name != "Wanderer" and faction.name != "Scrappers") then
+			if player:GetSubfaction() ~= "Kinisger" then
+				return false;
+			end
+		end;
+		
+		-- It is the IC responsibility of Gatekeepers to bloodtest recruits.
+		--[[if player:GetFaith() ~= "Faith of the Light" or player:GetSubfaith() == "Voltism" then
+			return false;
+		end]]--
+		
+		if (!Clockwork.player:IsWhitelisted(player, "Scrappers")) then
+			Clockwork.player:SetWhitelisted(player, "Scrappers", true);
+		end;
+	end;
+	
+	if SERVER then
+		function FACTION:CanPromote(player, target, faction, subfaction)
+			if !player:IsAdmin() then
+				local playerFaction = player:GetNetVar("kinisgerOverrideFaction") or player:GetFaction();
+				
+				if playerFaction == "Scrappers" then
+					local playerSubfaction = player:GetNetVar("kinisgerOverrideSubfaction") or player:GetSubfaction();
+					--[[
+					if playerSubfaction == "Blackhands" then
+						return false;
+					end
+					]]
+
+					if Schema:GetRankTier("Scrappers", player:GetCharacterData("rank", 1)) > 3 then
+						return true;
+					end
+				end
+			end
+		end
+		
+		function FACTION:CanDemote(player, target, faction, subfaction)
+			if !player:IsAdmin() then
+				local playerFaction = player:GetNetVar("kinisgerOverrideFaction") or player:GetFaction();
+				
+				if playerFaction == "Scrappers" then
+					local playerSubfaction = player:GetNetVar("kinisgerOverrideSubfaction") or player:GetSubfaction();
+					
+					--[[
+					if playerSubfaction == "Blackhands" then
+						return false;
+					end
+					]]
+
+					if Schema:GetRankTier("Scrappers", player:GetCharacterData("rank", 1)) < 3 then
+						return false;
+					end
+				end
+			end
+		end
+	end
+	
+	if !Schema.Ranks then
+		Schema.Ranks = {};
+	end
+	
+	if !Schema.RankTiers then
+		Schema.RankTiers = {};
+	end
+	
+	if !Schema.RanksToBuffs then
+		Schema.RanksToBuffs = {};
+	end
+	
+	if !Schema.RanksToSubfaction then
+		Schema.RanksToSubfaction = {};
+	end
+	
+	if !Schema.RanksToCoin then
+		Schema.RanksToCoin = {};
+	end
+	
+	Schema.Ranks["Scrappers"] = {
+		[1] = "Slave",
+        [2] = "Scav",
+        [3] = "Slag",
+        [4] = "Foreman",
+        [5] = "Warboss",
+        [6] = "Scrap King",
+		[7] = "Mechanic",
+		[8] = "Machinist",
+		[9] = "Smog Priest",
+		[10] = "",
+		[11] = "Scrap Punk"
+    };
+	
+	Schema.RankTiers["Scrappers"] = {
+		[1] = {"Slave", ""},
+		[2] = {"Scav", "Mechanic"},
+		[3] = {"Slag", "Machinist"},
+		[4] = {"Foreman", "Smog Priest", "Scrap Punk"},
+		[5] = {"Warboss"},
+		[6] = {"Scrap King"},
+	};
+	
+	Schema.RanksToBuffs["Scrappers"] = {
+		["Foreman"] = {health = 5, stamina = 5},
+		["Smog Priest"] = {health = 5, stamina = 5},
+		["Warboss"] = {health = 30, stamina = 25},
+		["Scrap King"] = {health = 50, stamina = 50},
+		["Scrap Punk"] = {health = 15, stamina = 10},
+	};
+
+	Schema.RanksToSubfaction["Scrappers"] = {
+		["Mechanic"] = "Greasers",
+		["Machinist"] = "Greasers",
+		["Smog Priest"] = "Greasers",
+	};
+
+FACTION_SCRAPPERS = FACTION:Register();
