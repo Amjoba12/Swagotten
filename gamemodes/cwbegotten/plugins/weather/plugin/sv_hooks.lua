@@ -149,22 +149,27 @@ function cwWeather:PlayerThink(player, curTime, infoTable, alive, initialized, p
 					end
 				end
 				
-				local hasIngenuityFinisher = cwBeliefs and player:HasBelief("ingenuity_finisher");
-				local hasScourRust = cwBeliefs and player:HasBelief("scour_the_rust");
-			
-				for k, v in pairs(player.equipmentSlots) do
-					if k == "Backpacks" or k == "Charm1" or k == "Charm2" then continue end;
-					
-					if v and v:IsInstance() then
-						if !v.unrepairable then
-							if hasIngenuityFinisher then
-								v:TakeCondition(math.random(1));
-							elseif hasScourRust then
-								v:TakeCondition(math.random(1, 2));
+				if !cwBeliefs or !player:HasBelief("ingenuity_finisher") or v.unrepairable then
+					local hasScourRust = cwBeliefs and player:HasBelief("scour_the_rust")
+
+					for k, v in pairs(player.equipmentSlots) do
+						if k == "Backpacks" or k == "Charm1" or k == "Charm2" then continue end
+
+						if v and v:IsInstance() then
+							local attrs = v.attributes
+							local isConditionless = attrs and table.HasValue(attrs, "conditionless")
+							local isWeatherproof = attrs and table.HasValue(attrs, "weatherproof")
+							local isWeatherproof1 = attrs and table.HasValue(attrs, "weatherproof1")
+
+							if not isConditionless and not isWeatherproof and not isWeatherproof1 then                                
+								if hasScourRust then
+									v:TakeCondition(math.random(1, 2))
+
+								else
+									v:TakeCondition(math.random(1, 3))
+								end
 							end
 						end
-						
-						v:TakeCondition(math.random(1, 3));
 					end
 				end
 					
@@ -230,16 +235,30 @@ function cwWeather:PlayerCanBeIgnited(player)
 end
 
 function cwWeather:ModifyStaminaDrain(player, drainTab)
-	if self.weather == "ash" then
-		local lastZone = player:GetCharacterData("LastZone");
-		local zoneTable = zones:FindByID(lastZone);
-		
-		if zoneTable and zoneTable.hasWeather then
-			if self:IsOutside(player:EyePos()) then
-				drainTab.decrease = drainTab.decrease * 2;
-			end
-		end
-	end
+    local lastZone = player:GetCharacterData("LastZone")
+
+    if self.weather == "ash" or lastZone == "ashlands" then
+        local armorItem = player:GetClothesEquipped()
+        local helmetItem = player:GetHelmetEquipped()
+        local isWeatherproof = false
+        local worn = {armorItem, helmetItem}
+
+        for _, v in pairs(worn) do
+            if v and v:IsInstance() and v.attributes and table.HasValue(v.attributes, "weatherproof") then
+                isWeatherproof = true
+                break
+            end
+        end
+
+        local lastZone = player:GetCharacterData("LastZone")
+        local zoneTable = zones:FindByID(lastZone)
+
+        if zoneTable and zoneTable.hasWeather and not isWeatherproof then
+            if self:IsOutside(player:EyePos()) then
+                drainTab.decrease = drainTab.decrease * 2
+            end
+        end
+    end
 end
 
 function cwWeather:PlayerRadioJammed(player, frequency, lastZone)
