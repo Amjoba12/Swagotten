@@ -380,14 +380,17 @@ end;
 local bannerIds = {
 	"begotten_polearm_glazicbanner",
 	"begotten_polearm_hillkeepersignum",
+	"begotten_scrappers_guitar",
 }
 
-function cwMelee:PlayerHasBanner(player)
-	local weapon = player:GetActiveWeapon()
-	if(!IsValid(weapon)) then return false end
-	if(#weapon:GetNW2String("activeShield", "") > 0) then return false end
-
-	if(weapon.bannerType) then return weapon
+	if(weapon.bannerType) then 
+		if weapon:GetClass() == "begotten_scrappers_guitar" then
+			if not player:IsWeaponRaised() or player:GetNetVar("ThrustStance") then
+				return false
+			end
+		end
+		
+		return weapon
 	else
 		-- If the player's armor has Blessing of the Banner, they don't need the banner actively out in order to have the effect.
 		local clothes = player:GetClothesEquipped()
@@ -432,6 +435,15 @@ function cwMelee:HandleBanners(player, curTime)
 	end
 
 	player.hadBanner = true
+
+	local actualBannerDistance = bannerDistance
+
+	if banner:GetClass() == "begotten_guitar" then
+        local clothes = player:GetClothesEquipped()
+        if not (clothes and clothes.uniqueID == "scrap_punk_armor") then
+            actualBannerDistance = (412 * 412)
+        end
+    end
 
 	local playerPos = player:GetPos()
 	for _, v in _player.Iterator() do
