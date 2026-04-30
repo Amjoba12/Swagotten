@@ -43,8 +43,8 @@ SWEP.WindUpSound = "draw/skyrim_axe_draw1.mp3" --For 2h weapons only, plays befo
 /*---------------------------------------------------------
 	PrimaryAttack
 ---------------------------------------------------------*/
-SWEP.AttackTable = "GoreFalxAttackTable"
-SWEP.BlockTable = "GoreFalxBlockTable"
+SWEP.AttackTable = "ScrapWarAxeAttackTable"
+SWEP.BlockTable = "ScrapWarAxeBlockTable"
 
 function SWEP:CriticalAnimation()
 
