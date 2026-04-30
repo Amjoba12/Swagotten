@@ -511,3 +511,28 @@ local ITEM = Clockwork.item:New("firearm_base");
 	ITEM.reloadSounds = {"fiend/welderefuel.wav"};
 	
 ITEM:Register();
+
+ITEM = Clockwork.item:New("firearm_base");
+	ITEM.name = "Stage Breaker";
+	ITEM.model = "models/mad_max/guitar_warriot.mdl";
+	ITEM.weight = 4;
+	ITEM.uniqueID = "begotten_guitar";
+	ITEM.description = "A custom-made guitar with special wires to connect this masterpiece to scrap-speakers. First noticed at the now legendary scrap-slam concert, wielded by the solist of A.S.S. music band who performed so good that many aspiring scrappers started to copy his design and perform their own concerts, inspiring his warband and earraping his enemies.";
+	ITEM.iconoverride = "icons/melee/guitar.png"
+	ITEM.isAttachment = true;
+	ITEM.attachmentBone = "ValveBiped.Bip01_Spine2";
+	ITEM.attachmentOffsetAngles = Angle(0, 0, 279.45);
+	ITEM.attachmentOffsetVector = Vector(1.39, 8.08, -5.08);
+	
+	ITEM.ammoCapacity = 1;
+	ITEM.ammoTypes = {"Cut Blood Diamond"};
+	ITEM.attributes = {"melee", "aoebuff1", "weatherproof1"};
+	ITEM.firearmType = "Great Weapon";
+	ITEM.reloadTime = 60; -- Seconds
+	ITEM.reloadSounds = {"musket/reload_musket01.wav", "musket/reload_musket02.wav", "musket/reload_musket03.wav", "musket/reload_musket04.wav", "musket/reload_musket05.wav", "musket/reload_musket06.wav", "musket/reload_musket07.wav", "musket/reload_musket08.wav", "musket/reload_musket_cock.wav"};
+	
+	ITEM.excludedSubfactions = {"Philimaxio", "Knights of Sol", "Scrap Knight"};
+	ITEM.components = {breakdownType = "meltdown", items = {"technocraft", "technocraft", "scrap", "scrap", "scrap", "scrap", "scrap"}};
+	ITEM.requiredFactions = {"Scrappers"};
+	ITEM.kinisgerOverride = true;
+ITEM:Register();
