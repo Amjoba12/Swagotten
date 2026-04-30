@@ -69,10 +69,136 @@ function playerMeta:ToggleWeaponRaised()
 	end
 end
 
+function PLUGIN:StartChainsawLoop(player)
+	if not SERVER then return end
+	if not IsValid(player) then return end
+
+	local weapon = player:GetActiveWeapon()
+	if not IsValid(weapon) or weapon:GetClass() ~= "begotten_prelude_chainsword" then return end
+
+	local plyID = player:SteamID()
+	local timerName = "ChainsawLoop_" .. plyID
+
+	if timer.Exists(timerName) then return end
+
+	local duration = 5
+
+	player:EmitSound("bgchainswordsfx/sfx_chainsaw_attack_start_0"..math.random(1, 2)..".ogg")
+
+	timer.Create(timerName, duration, 0, function()
+		if not IsValid(player) then
+			timer.Remove(timerName)
+			return
+		end
+
+		local wep = player:GetActiveWeapon()
+		if not IsValid(wep) or wep:GetClass() ~= "begotten_prelude_chainsword" or not player:IsWeaponRaised() then
+			timer.Remove(timerName)
+			player:StopSound("bgchainswordsfx/sfx_chainsaw_idle_loop_01.ogg")
+			return
+		end
+
+		player:EmitSound("bgchainswordsfx/sfx_chainsaw_idle_loop_01.ogg", 90, 100)
+	end)
+
+	player:EmitSound("bgchainswordsfx/sfx_chainsaw_idle_loop_01.ogg", 90, 100)
+end
+
+function PLUGIN:StopChainsawLoop(player)
+	if not SERVER then return end
+	if not IsValid(player) then return end
+
+	local timerName = "ChainsawLoop_" .. player:SteamID()
+
+	if timer.Exists(timerName) then
+		timer.Remove(timerName)
+	end
+
+	player:StopSound("bgchainswordsfx/sfx_chainsaw_idle_loop_01.ogg")
+	player:EmitSound("bgchainswordsfx/sfx_chainsaw_stop_0"..math.random(1, 2)..".ogg")
+end
+
+
+function PLUGIN:StartGuitarLoop(player)
+    if not SERVER then return end
+    if not IsValid(player) then return end
+
+    local weapon = player:GetActiveWeapon()
+    if not IsValid(weapon) or weapon:GetClass() ~= "begotten_scrappers_guitar" then return end
+
+    local timerName = "GuitarLoop_" .. player:SteamID()
+    if timer.Exists(timerName) then return end
+
+    local function PlayNextSong()
+        if not IsValid(player) then
+            timer.Remove(timerName)
+            return
+        end
+
+        local wep = player:GetActiveWeapon()
+        if not IsValid(wep)
+        or wep:GetClass() ~= "begotten_scrappers_guitar"
+        or not player:IsWeaponRaised() then
+
+            timer.Remove(timerName)
+            return
+        end
+
+
+        local last = player.LastGuitarSound or 0
+        local newID
+
+        repeat
+            newID = math.random(1, #GuitarSounds)
+        until newID ~= last or #GuitarSounds <= 1
+
+        player.LastGuitarSound = newID
+
+        local song = GuitarSounds[newID]
+        local duration = GuitarLength[newID]
+
+        player:EmitSound(song, 90, 100)
+
+
+        timer.Create(timerName, duration, 1, PlayNextSong)
+    end
+
+    PlayNextSong()
+end
+
+function PLUGIN:StopGuitarLoop(player)
+    if not SERVER then return end
+    if not IsValid(player) then return end
+
+    local timerName = "GuitarLoop_" .. player:SteamID()
+    timer.Remove(timerName)
+
+
+    for _, soundPath in ipairs(GuitarSounds) do
+        player:StopSound(soundPath)
+    end
+
+    player.LastGuitarSound = nil
+end
+
 function PLUGIN:OnWeaponRaised(player, weapon, bIsRaised)
 	if (IsValid(weapon)) then
 		local curTime = CurTime()
-
+		
+		if weapon:GetClass() == "begotten_scrappers_guitar" then
+			if bIsRaised and not player:GetNetVar("ThrustStance") then
+				self:StartGuitarLoop(player)
+			else
+				self:StopGuitarLoop(player)
+			end
+		elseif weapon:GetClass() == "begotten_prelude_chainsword" then
+			if bIsRaised then
+				self:StartChainsawLoop(player)
+			else
+				self:StopChainsawLoop(player)
+			end
+		end
+		
 		hook.Run("UpdateWeaponRaised", player, weapon, bIsRaised, curTime)
 	end
 end
