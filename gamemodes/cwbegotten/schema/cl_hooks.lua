@@ -2043,19 +2043,7 @@ function Schema:ModifyItemMarkupTooltip(category, maximumWeight, weight, conditi
 					
 					if table.HasValue(itemTable.attributes, "bell") then
 						frame:AddText("For Whom the Bell Tolls: Disorients any characters nearby with each holy strike.", Color(110, 30, 30), nil, 0.9);
-					end
-
-					if table.HasValue(itemTable.attributes, "weatherproof1") then
-						frame:AddText("Weatherproof: Acid rain has no effects on this weapon.", Color(110, 30, 30), nil, 0.9);
-					end
-
-					if table.HasValue(itemTable.attributes, "weatherproof") then
-						frame:AddText("Weatherproof: Acid rain has no effects on this weapon.", Color(110, 30, 30), nil, 0.9);
-					end
-
-					if table.HasValue(itemTable.attributes, "aoebuff1") then
-						frame:AddText("Area of Effect Buff: 10% Faster Attack Speed, 5% Moving Speed, 20% Faster Interactions", Color(110, 30, 30), nil, 0.9);
-					end
+					end	
 				end
 			
 				if weaponStats["attack"].dmgtype then
@@ -3347,6 +3335,22 @@ function Schema:ModifyItemMarkupTooltip(category, maximumWeight, weight, conditi
 			if table.HasValue(itemTable.attributes, "windwalker") then
 				frame:AddText("Wind Walker: Has a 15% chance of completely avoiding damage when taking damage from any source, stackable with the 'Lucky' belief and 'Distorted Ring' charm.", Color(110, 30, 30), nil, 0.9);
 			end
+			
+			if table.HasValue(itemTable.attributes, "weatherproof1") then
+				frame:AddText("Weatherproof: Acid rain has no effects on this weapon.", Color(110, 30, 30), nil, 0.9);
+			end
+	
+			if table.HasValue(itemTable.attributes, "weatherproof") then
+				frame:AddText("Weatherproof: Acid rain has no effects on this weapon.", Color(110, 30, 30), nil, 0.9);
+			end
+	
+			if table.HasValue(itemTable.attributes, "aoebuff1") then
+				frame:AddText("Area of Effect Buff: 10% Faster Attack Speed, 5% Moving Speed, 20% Faster Interactions", Color(110, 30, 30), nil, 0.9);
+			end
+	
+			if table.HasValue(itemTable.attributes, "powerroutine") then
+				frame:AddText("The Power of Routine: Exhaustion, Hunger and Thirst raise much slower while crafitng.", Color(110, 30, 30), nil, 0.9);
+			end	
 		end
 		
 		--if itemTable.weight then
