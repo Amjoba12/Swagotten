@@ -664,6 +664,15 @@ concommand.Add("begotten_raise", function(player)
 						actionTime = actionTime * 0.75;
 					end
 
+					if player.banners then
+                        for k, v in pairs(player.banners) do
+                            if v == "scrap" then
+                                actionTime = actionTime * 0.8;
+                                break;
+                            end
+                        end
+                    end
+
 					activeWeapon.nextFire = activeWeapon:GetNextPrimaryFire();
 					activeWeapon:SetNextPrimaryFire(curTime + 60);
 					activeWeapon:SetNextSecondaryFire(curTime + 60);
