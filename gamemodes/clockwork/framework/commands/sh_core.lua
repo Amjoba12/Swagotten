@@ -855,6 +855,14 @@ local COMMAND = Clockwork.command:New("CharGetUp");
 					if player:HasBelief("sleight_of_hand") then
 						get_up_time = get_up_time * 0.75;
 					end
+					if player.banners then
+						for k, v in pairs(player.banners) do
+							if v == "scrap" then
+								get_up_time = get_up_time * 0.8;
+								break;
+							end
+						end
+					end
 				end
 				
 				Clockwork.player:SetUnragdollTime(player, get_up_time);
