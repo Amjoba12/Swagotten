@@ -87,6 +87,15 @@ local ITEM = item.New(nil, true);
 			if player:GetCharmEquipped("bandolier") then
 				consumeTime = math.Round(consumeTime * 0.85);
 			end
+		
+			if player.banners then
+                for k, v in pairs(player.banners) do
+                    if v == "scrap" then
+                        consumeTime = math.Round(consumeTime * 0.8);
+                        break;
+                    end
+                end
+            end
 
 			consumeTime = math.max(consumeTime, 0.1)
 			
