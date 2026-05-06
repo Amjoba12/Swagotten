@@ -407,6 +407,15 @@ function SWEP:PrimaryAttack()
 			delay = delay * 0.9;
 		end
 
+		if owner.banners then
+			for k, v in pairs(owner.banners) do
+				if v == "scrap" then
+					delay = delay * 0.9;
+					break;
+				end
+			end
+		end
+
 		if CLIENT then
 			hook.Run("PlayerAttacks", owner);
 		end
