@@ -281,6 +281,14 @@ function cwPickupObjects:KeyPress(player, key)
 									if player:HasBelief("sleight_of_hand") then
 										pickupTime = pickupTime * 0.75;
 									end
+									if player.banners then
+                                        for k, v in pairs(player.banners) do
+                                            if v == "scrap" then
+                                                pickupTime = pickupTime * 0.8;
+                                                break;
+                                            end
+                                         end
+                                    end
 								end
 								
 								if player.cloaked then
