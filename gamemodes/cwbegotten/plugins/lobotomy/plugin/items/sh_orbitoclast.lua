@@ -55,6 +55,15 @@ local ITEM = Clockwork.item:New();
 
 	    	local consumeTime = 15;
 	    	if(player:HasBelief("dexterity")) then consumeTime = consumeTime * 0.67; end
+		
+			if player.banners then
+                for k, v in pairs(player.banners) do
+                    if v == "scrap" then
+                        consumeTime = consumeTime * 0.8;
+                        break;
+                    end
+                end
+            end
 
 	    	local timerName = "lobotomy"..player:EntIndex();
 	    	local index = 1;
