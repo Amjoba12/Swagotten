@@ -135,6 +135,14 @@ local ITEM = item.New(nil, true);
 					if player:HasBelief("sleight_of_hand") then
 						actionTime = math.Round(actionTime * 0.75);
 					end
+					if player.banners then
+						for k, v in pairs(player.banners) do
+							if v == "scrap" then
+								actionTime = math.Round(actionTime * 0.8);
+								break;
+							end
+						end
+					end
 				end
 				
 				Clockwork.player:SetAction(player, "taking_off_armor", actionTime, 1, function()
@@ -431,6 +439,14 @@ local ITEM = item.New(nil, true);
 						end
 						if player:HasBelief("sleight_of_hand") then
 							actionTime = math.Round(actionTime * 0.75);
+						end
+						if player.banners then
+							for k, v in pairs(player.banners) do
+								if v == "scrap" then
+									actionTime = math.Round(actionTime * 0.8);
+									break;
+								end
+							end
 						end
 					end
 					
