@@ -182,6 +182,15 @@ function cwPickupObjects:KeyPress(player, key)
 											pickupTime = 3;
 										end
 									end
+									
+									if player.banners then
+                                        for k, v in pairs(player.banners) do
+                                             if v == "scrap" then
+                                                pickupTime = pickupTime * 0.8;
+                                                break;
+                                            end
+                                        end
+                                     end
 
 									Clockwork.player:SetAction(player, "pickupragdoll", pickupTime, 5, function()
 										if (IsValid(player) and IsValid(entity)) and IsValid(player:GetActiveWeapon()) and player:GetActiveWeapon():GetClass() == "begotten_fists" and (!cwDueling or (cwDueling and !cwDueling:PlayerIsInMatchmaking(player))) then
@@ -224,6 +233,15 @@ function cwPickupObjects:KeyPress(player, key)
 											pickupTime = 3;
 										end
 									end
+
+								    if player.banners then
+										for k, v in pairs(player.banners) do
+											if v == "scrap" then
+												pickupTime = pickupTime * 0.8;
+												break;
+											end
+										end
+								 	end
 									
 									if player.cloaked then
 										player:Uncloak();
