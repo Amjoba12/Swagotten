@@ -214,7 +214,16 @@ function SWEP:PrimaryAttack()
 			else
 				self.Weapon:SetNextPrimaryFire(curTime + (attacktable["delay"]))
 			end
-			
+
+			if owner.banners then
+				for k, v in pairs(owner.banners) do
+					if v == "scrap" then
+						delay = delay * 0.9;
+						break;
+					end
+				end
+			end
+
 			self.Weapon:SetNextSecondaryFire(curTime + (attacktable["delay"]) * 0.1)
 			self.isAttacking = true;
 			
