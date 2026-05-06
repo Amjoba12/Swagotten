@@ -732,6 +732,15 @@ function SWEP:PrimaryAttack()
 	if cwBeliefs and owner.HasBelief and owner:HasBelief("flamboyance") then
 		delay = delay * 0.9;
 	end
+
+	if owner.banners then
+		for k, v in pairs(owner.banners) do
+			if v == "scrap" then
+				delay = delay * 0.9;
+				break;
+			end
+		end
+	end
 	
 	if self:GetNW2Bool("swordplayActive") == true then
 		delay = delay * 0.8;
