@@ -142,6 +142,15 @@ function cwMedicalSystem:PlayerUseMedical(player, itemTable, hitGroup)
 		if player:HasBelief("sleight_of_hand") then
 			consumeTime = consumeTime * 0.75;
 		end
+
+		if player.banners then
+            for k, v in pairs(player.banners) do
+                if v == "scrap" then
+                    consumeTime = consumeTime * 0.8;
+                    break;
+                end
+            end
+        end
 		
 		player:SetWeaponRaised(false);
 			
