@@ -322,8 +322,24 @@ function cwRecipes:Craft(player, uniqueID, itemIDs, craftAmount)
 							recipeTable:StartCraft(player);
 						end;
 						
-						if cwBeliefs and player:HasBelief("dexterity") then
-							craftTime = craftTime * 0.66;
+						if cwBeliefs then
+							if player:HasBelief("dexterity") then
+								craftTime = craftTime * 0.66;
+							end
+							local subfaction = player:GetSubfaction();
+                            if subfaction then
+                                if subfaction == "Blackhands" then
+                                    craftTime = craftTime * 0.5;
+                                end
+                            end
+                            if player.banners then
+                                for k, v in pairs(player.banners) do
+                                    if v == "scrap" then
+                                        craftTime = craftTime * 0.8;
+                                        break;
+                                    end
+                                end
+                            end
 						end
 						
 						Clockwork.player:SetAction(player, "crafting", craftTime, 5, function()
