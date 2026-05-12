@@ -1022,6 +1022,49 @@ function Schema:DrawTargetPlayerSubfaction(target, alpha, x, y)
 					else
 						subfactionText = "An outrider of the northern Hill of Light.";
 					end
+			elseif playerFaction == "Scrappers" then
+				if targetSubfaction == "Scrogs" then
+					if playerSubfaction == targetSubfaction then
+						subfactionText = "A fellow Scrog of the Scrapper Warband.";
+						textColor = Color(0, 255, 0, 255);
+					else
+						subfactionText = "A member of the Scrogs.";
+					end
+				elseif targetSubfaction == "Greasers" then
+					if playerSubfaction == targetSubfaction then
+						subfactionText = "A fellow Greaser of the Scrapper Warband.";
+						textColor = Color(0, 255, 0, 255);
+					else
+						subfactionText = "A member of the Greasers.";
+					end
+				elseif targetSubfaction == "Slaver" then
+					if playerSubfaction == targetSubfaction then
+						subfactionText = "A fellow Slaver of the Scrapper Warband.";
+						textColor = Color(0, 255, 0, 255);
+					else
+						subfactionText = "A member of the Slavers.";
+					end
+				elseif targetSubfaction == "Blackhands" then
+					if playerSubfaction == targetSubfaction then
+						subfactionText = "A fellow Blackhand of the Scrapper Warband.";
+						textColor = Color(0, 255, 0, 255);
+					else
+						subfactionText = "A slave of the Scrapper Warband.";
+					end
+				elseif targetSubfaction == "Scrap Knight" then
+					if playerSubfaction == targetSubfaction then
+						subfactionText = "A fellow knight of the Scrapper Warband.";
+						textColor = Color(0, 255, 0, 255);
+					else
+						subfactionText = "A knight of the Scrapper Warband.";
+					end
+				elseif targetSubfaction == "Voltists" then
+					if playerSubfaction == targetSubfaction then
+						subfactionText = "A fellow voltist of the Scrapper Warband.";
+						textColor = Color(0, 255, 0, 255);
+					else
+						subfactionText = "A member of the Voltists.";
+					end
 				end
 			elseif playerFaction == "Smog City Pirate" then
 				if targetSubfaction == "Voltists" then
