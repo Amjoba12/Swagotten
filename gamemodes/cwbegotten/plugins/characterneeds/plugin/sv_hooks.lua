@@ -76,6 +76,10 @@ function cwCharacterNeeds:PlayerThink(player, curTime, infoTable, alive, initial
 			if player:HasBelief("asceticism") then
 				next_hunger = next_hunger * 1.35;
 			end
+
+			if subfaction == "Blackhands" then
+					next_hunger = next_hunger * 1.5;
+			end
 			
 			plyTab.nextHunger = curTime + next_hunger;
 			
@@ -108,6 +112,10 @@ function cwCharacterNeeds:PlayerThink(player, curTime, infoTable, alive, initial
 		
 			if player:HasBelief("asceticism") then
 				next_thirst = next_thirst * 1.35;
+			end
+
+			if subfaction == "Blackhands" then
+					next_thirst = next_thirst * 1.5;
 			end
 			
 			plyTab.nextThirst = curTime + next_thirst;
@@ -142,6 +150,10 @@ function cwCharacterNeeds:PlayerThink(player, curTime, infoTable, alive, initial
 			
 				if player:HasBelief("asceticism") then
 					next_sleep = next_sleep * 1.35;
+				end
+				
+				if subfaction == "Blackhands" then
+						next_sleep = next_sleep * 1.5;
 				end
 			end
 			
