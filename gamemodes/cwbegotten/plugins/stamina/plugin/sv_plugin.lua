@@ -28,12 +28,14 @@ function cwStamina:GetMaxStaminaPlugin(player)
 		
 		if subfaction == "Servus" then
 			max_stamina = max_stamina + 5;
-		elseif subfaction == "Watchman" or subfaction == "Auxiliary" then
+		elseif subfaction == "Watchman" or subfaction == "Auxiliary" or subfaction == "Scrogs" or subfaction == "Greasers" then
 			max_stamina = max_stamina + 10;
-		elseif subfaction == "Legionary" or player:GetFaction() == "Pope Adyssa's Gatekeepers" or subfaction == "Varazdat" or subfaction == "Philimaxio" then
+		elseif subfaction == "Legionary" or player:GetFaction() == "Pope Adyssa's Gatekeepers" or subfaction == "Varazdat" or subfaction == "Philimaxio" or subfaction == "Voltists" then
 			max_stamina = max_stamina + 15;
 		elseif subfaction == "Knights of Sol" then
 			max_stamina = max_stamina + 25;
+		elseif subfaction == "Blackhands" then
+            max_stamina = max_stamina - 10;
 		end
 		
 		if cwBeliefs and player.HasBelief then
@@ -82,7 +84,7 @@ end;
 function cwStamina:ModifyStaminaDrain(player, drainTab)
 	local subfaction = player:GetSubfaction();
 	
-	if subfaction == "Praeventor" or subfaction == "Outrider" then
+	if subfaction == "Praeventor" or subfaction == "Outrider" or subfaction == "Blackhands" then
 		drainTab.decrease = drainTab.decrease * 0.75;
 	end
 end
