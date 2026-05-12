@@ -3221,3 +3221,104 @@ RITUAL = cwRituals.rituals:New("celestial_sigil_stone_rite");
 	function RITUAL:EndRitual(player)
 	end;
 RITUAL:Register()
+
+-- Scrapper rituals
+RITUAL = cwRituals.rituals:New("call_of_the_ash");
+	RITUAL.name = "(Unique) Call of the Ash";
+	RITUAL.description = "Scrappers living in the Ashlands adapted well to the harsh enviroment. They have learned that by making the right offerings to the Machine God, they are able to call upon the ash to choke their enemies, as if they never left their home. Performing this ritual will summon an ash storm within one minute. Incurs 50 corruption.";
+	RITUAL.onerequiredbelief = {"emissary", "watchful_raven", "sorcerer", "extinctionist"}; -- Unique Scrapper ritual
+	RITUAL.requiredSubfaction = {"Blackhands", "Scrogs", "Greasers"}; -- Subfaction Ritual
+	
+	RITUAL.requirements = {"belphegor_catalyst", "light_catalyst", "familial_catalyst"};
+	RITUAL.corruptionCost = 50;
+	RITUAL.ritualTime = 10;
+	RITUAL.experience = 200;
+	
+	function RITUAL:OnPerformed(player)
+		Schema:EasyText(Schema:GetAdmins(), "tomato", player:Name().." has performed the 'Call of the Ash' ritual!");
+
+		if cwWeather then
+			cwWeather:SetWeather("ash");
+			
+			return true;
+		end
+	end;
+	function RITUAL:OnFail(player)
+	end;
+	function RITUAL:StartRitual(player)
+		if cwWeather then
+			if !cwWeather.weatherTypes["ash"] then
+				Schema:EasyText(player, "peru", "This climate is unsuited for ash storm!");
+				
+				return false;
+			end
+			
+			if cwWeather.weather ~= "ash" then
+				if cwWeather.nextWeatherTime - CurTime() <= 10 then
+					-- Add enough time to complete the ritual!
+					cwWeather.nextWeatherTime = CurTime() + 10;
+				end
+				
+				return true;
+			else
+				Schema:EasyText(player, "peru", "There is already an active ash storm!");
+				
+				return false;
+			end
+		end
+		
+		return false;
+	end;
+	function RITUAL:EndRitual(player)
+	end;
+RITUAL:Register()
+
+RITUAL = cwRituals.rituals:New("call_of_the_acid");
+	RITUAL.name = "(Unique) Call of the Acid Rain";
+	RITUAL.description = "Beware the sulphuric reek - most would say. Though acid burns, rusts and decays, Scrappers care little, for their gear is made to endure. Make an offering and your enemies will run in fear as they hear your laughter, as the wrath of the Machine God comes and the corpsing commences. Performing this ritual will summon acid rain within one minute. Incurs 75 corruption.";
+	RITUAL.onerequiredbelief = {"emissary", "watchful_raven", "sorcerer", "extinctionist"}; -- Unique Scrapper ritual
+	RITUAL.requiredSubfaction = {"Blackhands", "Scrogs", "Greasers"}; -- Subfaction Ritual
+	
+	RITUAL.requirements = {"pentagram_catalyst", "holy_spirit", "vengeful_sigil_stone"};
+	RITUAL.corruptionCost = 75;
+	RITUAL.ritualTime = 10;
+	RITUAL.experience = 200;
+	
+	function RITUAL:OnPerformed(player)
+		Schema:EasyText(Schema:GetAdmins(), "tomato", player:Name().." has performed the 'Call of the Acid Rain' ritual!");
+
+		if cwWeather then
+			cwWeather:SetWeather("acidrain");
+			
+			return true;
+		end
+	end;
+	function RITUAL:OnFail(player)
+	end;
+	function RITUAL:StartRitual(player)
+		if cwWeather then
+			if !cwWeather.weatherTypes["acidrain"] then
+				Schema:EasyText(player, "peru", "This climate is unsuited for acid rain!");
+				
+				return false;
+			end
+			
+			if cwWeather.weather ~= "acid" then
+				if cwWeather.nextWeatherTime - CurTime() <= 10 then
+					-- Add enough time to complete the ritual!
+					cwWeather.nextWeatherTime = CurTime() + 10;
+				end
+				
+				return true;
+			else
+				Schema:EasyText(player, "peru", "There is already an active acid rain!");
+				
+				return false;
+			end
+		end
+		
+		return false;
+	end;
+	function RITUAL:EndRitual(player)
+	end;
+RITUAL:Register()
