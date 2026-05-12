@@ -14,7 +14,7 @@ function cwBeliefs:PlayerAdjustMaxWeight(player, weight)
 		new_weight = new_weight + 3;
 	elseif subfaction == "Tuners" then
 		new_weight = new_weight + 6;
-	elseif subfaction == "Clan Grock" then
+	elseif subfaction == "Clan Grock" or subfaction == "Greasers" then
 		new_weight = new_weight + 10;
 	end
 	
