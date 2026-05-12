@@ -197,6 +197,175 @@ if map == "rp_begotten3" then
 			camAngles = Angle(2.5, 90, 0),
 		},
 	};
+
+elseif map == "bg_testament" then
+	camTable = {
+		["Wanderer"] = {
+			camVector = Vector(-13320.488281, 12622.895508, 4650.901367),
+			camAngles = Angle(2.5, -180, 0),
+			closeCamVector = Vector(-13340.488281, 12621.895508, 4650.901367),
+			charVector = Vector(-13396.820312, 12619.908203, 4596.901367),
+			charAngles = Angle(0, 0, 0),
+			charModel = {clothes = "models/begotten/wanderers/wanderer_male.mdl", head = "models/begotten/heads/male_04_wanderer.mdl"},
+			charBodygroup = {1, 2},
+			zone = "wasteland"
+		},
+		["The Third Inquisition"] = {
+			camVector = Vector(-14043.679802, 12594.680664, 4589),
+			camAngles = Angle(2.5, -180, 0),
+			closeCamVector = Vector(-14066.004021, 12594.680664, 4579),
+			charVector = Vector(-15050.21875, 12597, -1235),
+			charAngles = Angle(0, 0, 0),
+			charModel = {clothes = "models/begotten/wanderers/wanderer_male.mdl", head = "models/begotten/heads/male_04_wanderer.mdl"},
+			charBodygroup = {1, 2},
+			zone = "wasteland"
+		},
+		["Deadlander"] = {
+			camVector = Vector(-13320.488281, 12622.895508, 4650.901367),
+			camAngles = Angle(2.5, -180, 0),
+			closeCamVector = Vector(-13340.488281, 12621.895508, 4650.901367),
+			charVector = Vector(-13396.820312, 12619.908203, 4596.901367),
+			charAngles = Angle(0, 0, 0),
+			charModel = {clothes = "models/begotten/prelude_deadlanders/deadlanderspawn_male.mdl", head = "models/begotten/heads/male_05_deadlander.mdl"},
+			zone = "tower"
+		},
+		["Gatekeeper"] = {
+			camVector = Vector(1718.995979, 12216.802734, 4739),
+			camAngles = Angle(0, 0, 0),
+			closeCamVector = Vector(1741.995979, 12216.802734, 4729),
+			charVector = Vector(1790.968750, 12216.563477, 4683.031250),
+			charAngles = Angle(0, 180, 0),
+			charModel = {clothes = "models/begotten/gatekeepers/gatekeepermedium_male.mdl", head = "models/begotten/heads/male_02_glaze.mdl"},
+			charBodygroup = {1, 4},
+			zone = "tower"
+		},
+		["Holy Hierarchy"] = {
+			camVector = Vector(112.610252, 13381.422852, 6139.031250),
+			camAngles = Angle(0, -90, 0),
+			closeCamVector = Vector(112.610252, 13341.422852, 6139.031250),
+			charVector = Vector(112.610252, 13281.422852, 6079.031250),
+			charAngles = Angle(0, 90, 0),
+			charModel = {clothes = "models/begotten/gatekeepers/minister_male.mdl", head = "models/begotten/heads/male_11_wanderer.mdl"},
+			zone = "tower"
+		},
+		["Follower of Moloch"] = {
+			camVector = Vector(-7369, -10177.395508, -6990),
+			camAngles = Angle(0, -90, 0),
+			closeCamVector = Vector(-7369, -10200, -6996),
+			charVector = Vector(-7368.25, -10245, -7044.90625),
+			charAngles = Angle(0, 90, 0),
+			charModel = "models/begotten/satanists/hellspike_armor.mdl",
+			charModelOverride = {clothes = "models/begotten/wanderers/wanderer_male.mdl", head = "models/begotten/heads/male_13_wanderer.mdl"},
+			zone = "hell"
+		},
+		["Scrappers"] = {
+			camVector = Vector(-13139.671875, 10310.521484, 895.343323),
+			camAngles = Angle(-0.369885, -138.140411, 0),
+			closeCamVector = Vector(-13160.876953, 10291.533203, 897.108826),
+			charVector = Vector(-13203.424805, 10253.389648, 835.895081),
+			charAngles = Angle(0, 40.949280, 0),
+			charModel = {clothes = "models/begotten/wanderers/scrapperheavyarmor.mdl"},
+			zone = "ashlands"
+		},
+	};
+
+	subfactionCamTable = {
+		["Varazdat"] = {
+			charModel = "models/begotten/satanists/darklanderspiceguard.mdl",
+			camVector = Vector(-7390, -10185, -6996),
+			camAngles = Angle(0, -90, 0),
+		},
+		["Rekh-khet-sa"] = {
+			charModel = "models/begotten/satanists/wraitharmor.mdl",
+			camVector = Vector(-7390, -10185, -6996),
+			camAngles = Angle(0, -90, 0),
+		},
+		["Philimaxio"] = {
+			charModel = "models/begotten/satanists/hellspike_armor.mdl",
+			camVector = Vector(-7390, -10185, -6996),
+			camAngles = Angle(0, -90, 0),
+		},
+		["Kinisger"] = {
+			charModel = {clothes = "models/begotten/satanists/elegantrobes_male.mdl", head = "models/begotten/heads/male_07_satanist.mdl"},
+			charBodygroup = {1, 1},
+			camVector = Vector(-7390, -10185, -6996),
+			camAngles = Angle(0, -90, 0),
+		},
+		["Legionary"] = {
+			charModel = {clothes = "models/begotten/gatekeepers/gatekeepermedium_male.mdl", head = "models/begotten/heads/male_02_glaze.mdl"},
+			charBodygroup = {1, 4},
+			camVector = Vector(1737.995979, 12197, 4731),
+			camAngles = Angle(0, 0, 0),
+		},
+		["Auxiliary"] = {
+			charModel = {clothes = "models/begotten/gatekeepers/gatekeeperlight_black_male.mdl", head = "models/begotten/heads/male_04_glaze.mdl"},
+			camVector = Vector(1737.995979, 12197, 4731),
+			camAngles = Angle(0, 0, 0),
+		},
+		["Raiders"] = {
+			charModel = {clothes = "models/begotten/prelude_deadlanders/deadlanderspawn_male.mdl", head = "models/begotten/heads/male_05_deadlander.mdl"},
+			camVector = Vector(-13340.488281, 12621.895508, 4650.901367),
+			camAngles = Angle(0, -180, 0),
+		},
+		["Tuners"] = {
+			charModel = {clothes = "models/begotten/prelude_deadlanders/deadlanderspawn_male.mdl", head = "models/begotten/heads/male_05_deadlander.mdl"},
+			camVector = Vector(-13340.488281, 12621.895508, 4650.901367),
+			camAngles = Angle(0, -180, 0),
+		},
+		["Praeventor"] = {
+			charModel = {clothes = "models/begotten/wanderers/brigandine_male.mdl", head = "models/begotten/heads/male_04_wanderer.mdl"},
+			charBodygroup = {1, 2},
+			camVector = Vector(1737.995979, 12197, 4731),
+			camAngles = Angle(0, 0, 0),
+		},
+		["Ministry"] = {
+			charModel = {clothes = "models/begotten/gatekeepers/minister_male.mdl", head = "models/begotten/heads/male_11_wanderer.mdl"},
+			camVector = Vector(102.610252, 13351.422852, 6129.031250),
+			camAngles = Angle(0, -90, 0),
+		},
+		["Inquisition"] = {
+			charModel = {clothes = "models/begotten/gatekeepers/inquisitor_male.mdl", head = "models/begotten/heads/male_07_glaze.mdl"},
+			charBodygroup = {1, 1},
+			camVector = Vector(102.610252, 13351.422852, 6129.031250),
+			camAngles = Angle(0, -90, 0),
+		},
+		["Knights of Sol"] = {
+			charModel = {clothes = "models/begotten/gatekeepers/knight_set.mdl", head = "models/begotten/heads/knight_helmet.mdl"},
+			camVector = Vector(102.610252, 13351.422852, 6129.031250),
+			camAngles = Angle(0, -90, 0),
+		},
+		["Scrogs"] = {
+			charModel = {clothes = "models/begotten/wanderers/scrapperheavyarmor.mdl"},
+			camVector = Vector(-13159.671875, 10310.521484, 885.343323),
+			camAngles = Angle(-0.369885, -138.140411, 0),
+		},
+		["Slaver"] = {
+			charModel = {clothes = "models/begotten/wanderers/scrapperarmorlight.mdl"},
+			camVector = Vector(-13159.671875, 10310.521484, 885.343323),
+			camAngles = Angle(-0.369885, -138.140411, 0),
+		},
+		["Greasers"] = {
+			charModel = {clothes = "models/begotten/wanderers/scrapperarmor2.mdl"},
+			camVector = Vector(-13159.671875, 10310.521484, 885.343323),
+			camAngles = Angle(-0.369885, -138.140411, 0),
+		},
+		["Blackhands"] = {
+			charModel = {clothes = "models/begoyten/awesome/blackhand_male.mdl", head = "models/begotten/heads/male_61_wanderer.mdl"},
+			camVector = Vector(-13159.671875, 10310.521484, 885.343323),
+			camAngles = Angle(-0.369885, -138.140411, 0),
+		},
+		["Scrap Knight"] = {
+			charModel = {clothes = "models/begottenprelude/goose/solknight.mdl",},
+			camVector = Vector(-13159.671875, 10310.521484, 885.343323),
+			camAngles = Angle(-0.369885, -138.140411, 0),
+		},
+		["Voltists"] = {
+			charModel = "models/begotten/wanderers/voltist_heavy.mdl",
+			camVector = Vector(-13159.671875, 10310.521484, 885.343323),
+			camAngles = Angle(-0.369885, -138.140411, 0),
+		},
+	};
+	
 elseif map == "rp_begotten_redux" then
 	camTable = {
 		["Wanderer"] = {
