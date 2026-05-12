@@ -212,7 +212,7 @@ local LIGHT = cwBeliefs.beliefTrees:New("light")
 				quote = "An infestation seeking to consume the Light from within is how ministers of the Holy Hierarchy would describe Voltism. A major cult with no chain of command who seek technology and enlightenment through transhumanism. They gradually replace more of their body with machine and stimulate their minds with electrical shocks. Their true motives, or their leader, remain unknown.",
 				iconOverride = "begotten/ui/belieficons/faith-volt.png",
 				lockedFactions = {"Pope Adyssa's Gatekeepers", "Gatekeeper", "Hillkeeper", "Holy Hierarchy"},
-				lockedSubfactions = {"Machinist", "Northlander"};
+				lockedSubfactions = {"Machinist", "Northlander", "Scrogs", "Greasers", "Blackhands"};
 				row = 1,
 			},
 		},
