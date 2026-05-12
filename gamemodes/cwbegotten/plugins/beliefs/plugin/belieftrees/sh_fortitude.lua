@@ -37,6 +37,7 @@ local FORTITUDE = cwBeliefs.beliefTrees:New("fortitude")
 			["asceticism"] = {
 				name = "Asceticism",
 				description = "Hunger and thirst now drain 35% slower. This will also affect fatigue (energy) if you are a Voltist with the 'Yellow and Black' belief.",
+				lockedSubfactions = {"Blackhands"},
 				row = 1,
 			},
 			["outlasting"] = {
@@ -51,6 +52,7 @@ local FORTITUDE = cwBeliefs.beliefTrees:New("fortitude")
 			["prudence"] = {
 				name = "Prudence",
 				description = "Sanity now drains 25% slower and certain events affect your sanity less. The sanity effect of enemy warcries is reduced by 50%.",
+				lockedSubfactions = {"Blackhands"},
 				row = 1,
 			},
 			["saintly_composure"] = {
@@ -71,6 +73,7 @@ local FORTITUDE = cwBeliefs.beliefTrees:New("fortitude")
 			["hauberk"] = {
 				name = "Hauberk",
 				description = "Unlocks the ability to wear heavy armor.",
+				lockedSubfactions = {"Blackhands"},
 				row = 1,
 			},
 			["defender"] = {
@@ -98,6 +101,7 @@ local FORTITUDE = cwBeliefs.beliefTrees:New("fortitude")
 				name = "The Believer's Perseverance",
 				description = "Increases critical condition duration by 300%.",
 				quote = "\"Suffer in silence and do not step into the light; there are more foes yet to kill!\"",
+				lockedSubfactions = {"Blackhands"},
 				row = 1,
 			},
 			["plenty_to_spill"] = {
@@ -117,6 +121,7 @@ local FORTITUDE = cwBeliefs.beliefTrees:New("fortitude")
 			["hide_of_steel"] = {
 				name = "Hide of Steel",
 				description = "Reduces the chance of receiving injuries by 50%.",
+				lockedSubfactions = {"Blackhands"},
 				row = 1,
 			},
 			["iron_bones"] = {
