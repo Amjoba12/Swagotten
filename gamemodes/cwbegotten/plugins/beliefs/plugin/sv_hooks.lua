@@ -1604,6 +1604,10 @@ function cwBeliefs:FuckMyLife(entity, damageInfo)
 							if (attacker:GetFaction() == "Gatekeeper" and subfaction == "Legionary") or (attacker:GetFaction() == "Hillkeeper" and subfaction == "Watchman") or (attacker:GetFaction() == "Deadlander" and subfaction == "Raiders") then
 								damageXP = damageXP * 2;
 							end
+
+							if (attacker:GetFaction() == "Scrappers" and subfaction == "Scrogs") or (attacker:GetFaction() == "Deadlander" and subfaction == "Raiders") then
+								damageXP = damageXP * 1.5;
+							end
 						
 							attacker:HandleXP(damageXP);
 						end
@@ -2255,6 +2259,23 @@ function cwBeliefs:PrePlayerCharacterCreated(player, character)
 			level = level + 7;
 		else
 			level = level + 5;
+		end
+	elseif faction == "Scrappers" then
+		if subfaction == "Scrogs" then
+			level = level + 7;
+		elseif subfaction == "Slaver" then
+			level = level + 7;
+		elseif subfaction == "Greasers" then
+				data["beliefs"]["ingenious"] = true;
+				data["beliefs"]["craftsman"] = true;
+				data["beliefs"]["smith"] = true;
+			level = level + 11;
+		elseif subfaction == "Blackhands" then
+			level = level + 5;
+		elseif subfaction == "Voltists" then
+			level = level + 10;
+			data["beliefs"]["voltism"] = true;
+			character.subfaith = "Voltism";
 		end
 	end
 	
