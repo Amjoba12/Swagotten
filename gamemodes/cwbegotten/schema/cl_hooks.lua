@@ -1037,26 +1037,12 @@ function Schema:DrawTargetPlayerSubfaction(target, alpha, x, y)
 					else
 						subfactionText = "A member of the Greasers.";
 					end
-				elseif targetSubfaction == "Slaver" then
-					if playerSubfaction == targetSubfaction then
-						subfactionText = "A fellow Slaver of the Scrapper Warband.";
-						textColor = Color(0, 255, 0, 255);
-					else
-						subfactionText = "A member of the Slavers.";
-					end
 				elseif targetSubfaction == "Blackhands" then
 					if playerSubfaction == targetSubfaction then
 						subfactionText = "A fellow Blackhand of the Scrapper Warband.";
 						textColor = Color(0, 255, 0, 255);
 					else
 						subfactionText = "A slave of the Scrapper Warband.";
-					end
-				elseif targetSubfaction == "Scrap Knight" then
-					if playerSubfaction == targetSubfaction then
-						subfactionText = "A fellow knight of the Scrapper Warband.";
-						textColor = Color(0, 255, 0, 255);
-					else
-						subfactionText = "A knight of the Scrapper Warband.";
 					end
 				elseif targetSubfaction == "Voltists" then
 					if playerSubfaction == targetSubfaction then
