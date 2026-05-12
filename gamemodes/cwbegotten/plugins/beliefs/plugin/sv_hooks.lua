@@ -2263,12 +2263,10 @@ function cwBeliefs:PrePlayerCharacterCreated(player, character)
 	elseif faction == "Scrappers" then
 		if subfaction == "Scrogs" then
 			level = level + 7;
-		elseif subfaction == "Slaver" then
-			level = level + 7;
 		elseif subfaction == "Greasers" then
-				data["beliefs"]["ingenious"] = true;
-				data["beliefs"]["craftsman"] = true;
-				data["beliefs"]["smith"] = true;
+			data["beliefs"]["ingenious"] = true;
+			data["beliefs"]["craftsman"] = true;
+			data["beliefs"]["smith"] = true;
 			level = level + 11;
 		elseif subfaction == "Blackhands" then
 			level = level + 5;
