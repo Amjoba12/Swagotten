@@ -39,6 +39,10 @@ function playerMeta:HandleSanity(amount)
 		if amount < 0 then
 			amount = amount * 1.5;
 		end
+	elseif subfaction == "Scrogs" then
+		if amount < 0 then
+			amount = amount * 0.8;
+		end
 	end
 	
 	if amount < 0 then
