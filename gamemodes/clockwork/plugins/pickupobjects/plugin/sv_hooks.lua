@@ -182,6 +182,13 @@ function cwPickupObjects:KeyPress(player, key)
 											pickupTime = 3;
 										end
 									end
+
+									local subfaction = player:GetSubfaction();
+                                    if subfaction then
+										if subfaction == "Blackhands" then
+											pickupTime = pickupTime * 0.5;
+										end
+									end
 									
 									if player.banners then
                                         for k, v in pairs(player.banners) do
@@ -231,6 +238,13 @@ function cwPickupObjects:KeyPress(player, key)
 											pickupTime = 2;
 										else
 											pickupTime = 3;
+										end
+									end
+
+									local subfaction = player:GetSubfaction();
+									if subfaction then
+										if subfaction == "Blackhands" then
+											pickupTime = pickupTime * 0.5;
 										end
 									end
 
@@ -299,6 +313,14 @@ function cwPickupObjects:KeyPress(player, key)
 									if player:HasBelief("sleight_of_hand") then
 										pickupTime = pickupTime * 0.75;
 									end
+									
+									local subfaction = player:GetSubfaction();
+									if subfaction then
+										if subfaction == "Blackhands" then
+											pickupTime = pickupTime * 0.5;
+										end
+									end
+									
 									if player.banners then
                                         for k, v in pairs(player.banners) do
                                             if v == "scrap" then
