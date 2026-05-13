@@ -855,6 +855,12 @@ local COMMAND = Clockwork.command:New("CharGetUp");
 					if player:HasBelief("sleight_of_hand") then
 						get_up_time = get_up_time * 0.75;
 					end
+					local subfaction = player:GetSubfaction();
+					if subfaction then
+						if subfaction == "Blackhands" then
+							get_up_time = get_up_time * 0.5;
+						end
+					end
 					if player.banners then
 						for k, v in pairs(player.banners) do
 							if v == "scrap" then
