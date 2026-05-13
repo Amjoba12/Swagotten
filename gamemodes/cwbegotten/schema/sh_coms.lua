@@ -928,6 +928,18 @@ local COMMAND = Clockwork.command:New("Promote")
 					end
 				end;
 
+				if targetSubfaction == "Blackhands" then
+					rank = false;
+					Schema:EasyText(player, "darkgrey", target:Name().." is a fucking Blackhand and cannot be promoted!");
+					return;
+				end
+
+				if targetSubfaction == "Voltists" then
+					rank = false;
+					Schema:EasyText(player, "darkgrey", target:Name().." is a Voltist and cannot be promoted!");
+					return;
+				end
+			
 				if (ranks[faction][rank]) then
 					if rank == target:GetCharacterData("rank", 1) then
 						Schema:EasyText(player, "grey", target:Name().." already holds the rank of "..ranks[faction][rank].."!");
