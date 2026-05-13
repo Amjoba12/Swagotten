@@ -1124,6 +1124,13 @@ function Schema:ShowSpare1(player)
 					untieTime = 4;
 				end
 			end
+
+			local subfaction = player:GetSubfaction();
+			if subfaction then
+				if subfaction == "Blackhands" then
+					untieTime = untieTime * 0.5;
+				end
+			end		
 		
 			if (target:GetNetVar("tied") != 0) then
 				if player:GetMoveType() == MOVETYPE_WALK then
