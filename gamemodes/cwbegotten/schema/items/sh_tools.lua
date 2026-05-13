@@ -452,11 +452,26 @@ local ITEM = Clockwork.item:New();
 			local target = Clockwork.entity:GetPlayer(trace.Entity);
 			local tieTime = 6;
 			
-			if player.HasBelief and (player:HasBelief("dexterity") or player:HasBelief("sleight_of_hand")) then
-				if player:HasBelief("sleight_of_hand") and player:HasBelief("dexterity") then
-					tieTime = 3;
-				else
-					tieTime = 4;
+			if player:HasBelief("dexterity") then
+				tieTime = tieTime * 0.67;
+			end
+			
+			if player:HasBelief("sleight_of_hand") then
+				tieTime = tieTime * 0.75;
+			end	
+
+			local subfaction = player:GetSubfaction();
+			if subfaction then
+				if subfaction == "Blackhands" then
+					tieTime = tieTime * 0.5;
+				end
+			end     
+			if player.banners then
+				for k, v in pairs(player.banners) do
+					if v == "scrap" then
+						tieTime = tieTime * 0.8;
+						break;
+					end
 				end
 			end
 			
