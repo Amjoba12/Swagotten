@@ -139,11 +139,13 @@ function cwMedicalSystem:PlayerUseMedical(player, itemTable, hitGroup)
 			consumeTime = consumeTime * 0.67;
 		end
 		
-		if player:HasBelief("sleight_of_hand") then
-			consumeTime = consumeTime * 0.75;
-		end
-
-		if player.banners then
+		local subfaction = player:GetSubfaction();
+        if subfaction then
+            if subfaction == "Blackhands" then
+                consumeTime = consumeTime * 0.5;
+            end
+        end     
+        if player.banners then
             for k, v in pairs(player.banners) do
                 if v == "scrap" then
                     consumeTime = consumeTime * 0.8;
@@ -360,6 +362,22 @@ function cwMedicalSystem:HealPlayer(player, target, itemTable, hitGroup)
 	
 	if player:HasBelief("doctor") then
 		consumeTime = consumeTime * 0.5;
+	end
+
+	local subfaction = player:GetSubfaction();
+	if subfaction then
+		if subfaction == "Blackhands" then
+			consumeTime = consumeTime * 0.5;
+		end
+	end     
+	
+	if player.banners then
+		for k, v in pairs(player.banners) do
+			if v == "scrap" then
+				consumeTime = consumeTime * 0.8;
+				break;
+			end
+		end
 	end
 	
 	if (actionPlayer != "heal" and actionPlayer != "healing" and actionPlayer != "performing_surgery") then
