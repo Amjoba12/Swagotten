@@ -87,6 +87,13 @@ local ITEM = item.New(nil, true);
 			if player:GetCharmEquipped("bandolier") then
 				consumeTime = math.Round(consumeTime * 0.85);
 			end
+
+			local subfaction = player:GetSubfaction()
+            if subfaction then
+                if subfaction == "Blackhands" then
+                    consumeTime = math.Round(consumeTime * 0.75);
+                end
+            end
 		
 			if player.banners then
                 for k, v in pairs(player.banners) do
