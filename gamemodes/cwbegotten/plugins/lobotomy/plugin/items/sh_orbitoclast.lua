@@ -54,9 +54,19 @@ local ITEM = Clockwork.item:New();
 	    	player:SetWeaponRaised(false);
 
 	    	local consumeTime = 15;
-	    	if(player:HasBelief("dexterity")) then consumeTime = consumeTime * 0.67; end
-		
-			if player.banners then
+	    	if(player:HasBelief("dexterity")) then 
+				consumeTime = consumeTime * 0.67; 
+			end
+			if(player:HasBelief("sleight_of_hand")) then 
+				consumeTime = consumeTime * 0.75; 
+			end
+			local subfaction = player:GetSubfaction();
+            if subfaction then
+                if subfaction == "Blackhands" then
+                    consumeTime = consumeTime * 0.5;
+                end
+            end
+            if player.banners then
                 for k, v in pairs(player.banners) do
                     if v == "scrap" then
                         consumeTime = consumeTime * 0.8;
