@@ -659,12 +659,18 @@ concommand.Add("begotten_raise", function(player)
 					if player:HasBelief("dexterity") then
 						actionTime = actionTime * 0.66;
 					end
-					
+
 					if player:HasBelief("sleight_of_hand") then
 						actionTime = actionTime * 0.75;
 					end
 
-					if player.banners then
+					local subfaction = player:GetSubfaction();
+                    if subfaction then
+                        if subfaction == "Blackhands" then
+                            actionTime = actionTime * 0.5;
+                        end
+                    end
+                    if player.banners then
                         for k, v in pairs(player.banners) do
                             if v == "scrap" then
                                 actionTime = actionTime * 0.8;
@@ -672,7 +678,7 @@ concommand.Add("begotten_raise", function(player)
                             end
                         end
                     end
-
+						
 					activeWeapon.nextFire = activeWeapon:GetNextPrimaryFire();
 					activeWeapon:SetNextPrimaryFire(curTime + 60);
 					activeWeapon:SetNextSecondaryFire(curTime + 60);
