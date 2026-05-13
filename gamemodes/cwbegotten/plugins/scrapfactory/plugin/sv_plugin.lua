@@ -345,6 +345,13 @@ function cwScrapFactory:PlayerUse(player, entity)
 				if player.GetCharmEquipped and player:GetCharmEquipped("wrench") then
 					duration = 1;
 				end
+
+				local subfaction = player:GetSubfaction();
+				if subfaction then
+					if subfaction == "Blackhands" then
+						duration = duration * 0.5;
+					end
+				end			
 				
 				Clockwork.player:SetUseKeyAction(player, "turn_scrapfactory_valve", duration, 1, function() 
 					if (IsValid(entity)) then
