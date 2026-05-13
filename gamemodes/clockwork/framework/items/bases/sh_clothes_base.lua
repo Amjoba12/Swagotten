@@ -135,6 +135,10 @@ local ITEM = item.New(nil, true);
 					if player:HasBelief("sleight_of_hand") then
 						actionTime = math.Round(actionTime * 0.75);
 					end
+					local subfaction = player:GetSubfaction();
+					if subfaction == "Blackhands" then
+						actionTime = math.Round(actionTime * 0.5);
+					end
 					if player.banners then
 						for k, v in pairs(player.banners) do
 							if v == "scrap" then
@@ -438,7 +442,11 @@ local ITEM = item.New(nil, true);
 							actionTime = math.Round(actionTime * 0.66);
 						end
 						if player:HasBelief("sleight_of_hand") then
-							actionTime = math.Round(actionTime * 0.75);
+							actionTime = math.Round(actionTime * 0.75); 
+						end
+						local subfaction = player:GetSubfaction();
+						if subfaction == "Blackhands" then
+							actionTime = math.Round(actionTime * 0.5);
 						end
 						if player.banners then
 							for k, v in pairs(player.banners) do
