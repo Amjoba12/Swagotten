@@ -169,14 +169,20 @@ function cwPossession:StartCommand(player, ucmd)
 								if victim:HasBelief("sleight_of_hand") then
 									get_up_time = get_up_time * 0.75;
 								end
+								local subfaction = victim:GetSubfaction();
+								if subfaction then
+									if subfaction == "Blackhands" then
+										get_up_time = get_up_time * 0.5;
+									end
+								end     
 								if victim.banners then
-                                	for k, v in pairs(victim.banners) do
-                                        if v == "scrap" then
-                                            get_up_time = get_up_time * 0.8;
-                                            break;
-                                        end
-                                    end
-                                end
+									for k, v in pairs(victim.banners) do
+										if v == "scrap" then
+											get_up_time = get_up_time * 0.8;
+											break;
+										end
+									end
+								end
 							end
 							
 							Clockwork.player:SetUnragdollTime(victim, get_up_time);
