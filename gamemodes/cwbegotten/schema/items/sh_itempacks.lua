@@ -329,22 +329,23 @@ local ITEM = Clockwork.item:New();
 	ITEM.category = "Other";
 	ITEM.description = "A duffel bag containing tier 2 equipment.";
 	ITEM.weight = 5;
-	ITEM.randomWeaponsG = {"begotten_1h_goreshortsword", "begotten_1h_gorebattleaxe", "begotten_prelude_1h_scrapfragaxe"}; 
+	ITEM.randomWeaponsG = {"begotten_1h_goreshortsword", "begotten_1h_gorebattleaxe", "begotten_spear_ironspear", "begotten_1h_battleaxe", "begotten_1h_goreseax", "begotten_1h_gorefalchion"}; 
 	ITEM.randomWeaponsP = {"begotten_1h_ironarmingsword", "begotten_1h_gorebattleaxe", "begotten_spear_ironspear", "begotten_1h_battleaxe", "begotten_prelude_1h_scrapfragaxe"};
 	ITEM.randomWeaponsGK = {"begotten_1h_ironarmingsword", "begotten_1h_gorebattleaxe", "begotten_spear_ironspear", "begotten_1h_battleaxe", "begotten_1h_glazicus", "begotten_prelude_1h_scrapfragaxe"};
-	ITEM.randomWeaponsReaverFOTD = {"begotten_1h_goreshortsword", "begotten_1h_reaverbattleaxe", "begotten_spear_ironspear", "begotten_prelude_1h_scrapfragaxe"};
-	ITEM.randomWeaponsReaverFOTF = {"begotten_1h_reaverbattleaxe", "begotten_1h_goreshortsword", "begotten_spear_ironspear", "begotten_prelude_1h_scrapfragaxe"};
-	ITEM.randomWeaponsGheavy = {"begotten_2h_great_goreclub", "begotten_2h_great_gorewaraxe", "begotten_2h_longsword", "begotten_prelude_2h_great_heavycleaver", "begotten_prelude_2h_great_bludgeoner", "begotten_prelude_2h_estoc", "begotten_prelude_2h_great_kanabo", "begotten_prelude_2h_scrapchopper", "begotten_prelude_polearm_goedandag", "begotten_prelude_polearm_mancatcher"};
-	ITEM.randomWeaponsPheavy = {"begotten_2h_longsword", "begotten_2h_great_heavybattleaxe", "begotten_prelude_2h_great_heavycleaver", "begotten_prelude_2h_bludgeoner", "begotten_prelude_2h_estoc", "begotten_prelude_2h_great_kanabo", "begotten_prelude_2h_scrapchopper", "begotten_prelude_polearm_goedandag", "begotten_prelude_polearm_mancatcher"};
-	ITEM.randomWeaponsReaverFOTDheavy = {"begotten_2h_great_reaverwaraxe", "begotten_2h_great_goreclub", "begotten_2h_longsword", "begotten_prelude_2h_great_heavycleaver", "begotten_prelude_2h_bludgeoner", "begotten_prelude_2h_estoc", "begotten_prelude_2h_great_kanabo", "begotten_prelude_2h_scrapchopper"};
+	ITEM.randomWeaponsReaverFOTD = {"begotten_1h_goreshortsword", "begotten_1h_reaverbattleaxe", "begotten_spear_ironspear"};
+	ITEM.randomWeaponsReaverFOTF = {"begotten_1h_reaverbattleaxe", "begotten_1h_goreshortsword", "begotten_spear_ironspear"};
+	ITEM.randomWeaponsGheavy = {"begotten_2h_great_goreclub", "begotten_2h_great_gorewaraxe", "begotten_2h_longsword", "begotten_prelude_2h_great_heavycleaver", "begotten_prelude_2h_great_bludgeoner", "begotten_prelude_2h_estoc", "begotten_prelude_2h_scrapchopper", "begotten_prelude_polearm_goedandag", "begotten_prelude_polearm_mancatcher", "begotten_2h_great_heavybattleaxe"};
+	ITEM.randomWeaponsPheavy = {"begotten_2h_longsword", "begotten_2h_great_heavybattleaxe", "begotten_prelude_2h_great_heavycleaver", "begotten_prelude_2h_bludgeoner", "begotten_prelude_2h_estoc", "begotten_prelude_2h_scrapchopper", "begotten_prelude_polearm_goedandag", "begotten_prelude_polearm_mancatcher"};
+	ITEM.randomWeaponsReaverFOTDheavy = {"begotten_2h_great_reaverwaraxe", "begotten_2h_great_goreclub", "begotten_2h_longsword", "begotten_prelude_2h_great_heavycleaver", "begotten_prelude_2h_bludgeoner", "begotten_prelude_2h_estoc", "begotten_prelude_2h_scrapchopper"};
 	ITEM.randomWeaponsReaverFOTDheavyPRIME = {"begotten_2h_longsword", "begotten_prelude_2h_bludgeoner", "begotten_prelude_2h_estoc"};
 	ITEM.randomWeaponsReaverFOTDPRIME = {"begotten_1h_goreshortsword", "begotten_1h_reaverbattleaxe", "begotten_spear_ironspear"};
-	ITEM.randomWeaponsReaverFOTFheavy = {"begotten_2h_great_reaverwaraxe", "begotten_2h_great_goreclub", "begotten_2h_longsword", "begotten_prelude_2h_great_heavycleaver", "begotten_prelude_2h_bludgeoner", "begotten_prelude_2h_estoc", "begotten_prelude_2h_great_kanabo", "begotten_prelude_2h_scrapchopper"};
+	ITEM.randomWeaponsReaverFOTFheavy = {"begotten_2h_great_reaverwaraxe", "begotten_2h_great_goreclub", "begotten_2h_longsword", "begotten_prelude_2h_great_heavycleaver", "begotten_prelude_2h_bludgeoner", "begotten_prelude_2h_estoc", "begotten_prelude_2h_scrapchopper"};
 	ITEM.randomcharms = {"ring_vitality_lesser", "embalmed_heart", "ring_courier", "ring_protection_bronze", "ring_pummeler", "boot_contortionist"};
 	ITEM.randomcharmsSERVUS = {"ring_vitality_lesser", "embalmed_heart", "ring_courier", "ring_protection_bronze", "ring_pummeler", "boot_contortionist", "bandolier"};
 	ITEM.randomWeaponsSATAN = {"begotten_1h_twistedmachete", "begotten_1h_twistedclub", "begotten_1h_warpedsword", "begotten_1h_scimitar", "begotten_prelude_1h_scrapfragaxe"};
-	ITEM.randomWeaponsSATANheavy = {"begotten_2h_longsword", "begotten_2h_great_heavybattleaxe", "begotten_scythe_warscythe", "begotten_prelude_2h_great_heavycleaver", "begotten_prelude_2h_bludgeoner", "begotten_prelude_2h_estoc", "begotten_prelude_2h_great_kanabo", "begotten_prelude_2h_scrapchopper"};
-	ITEM.randomWeaponsSATANrekh = {"begotten_1h_twistedmachete", "begotten_1h_twistedclub", "begotten_1h_warpedsword", "begotten_spear_ironspear", "begotten_1h_scimitar", "begotten_prelude_2h_bludgeoner", "begotten_prelude_2h_estoc", "begotten_prelude_polearm_goedandag", "begotten_prelude_polearm_mancatcher"};
+	ITEM.randomWeaponsSATANheavy = {"begotten_2h_longsword", "begotten_2h_great_heavybattleaxe", "begotten_scythe_warscythe", "begotten_prelude_2h_great_heavycleaver", "begotten_prelude_2h_bludgeoner", "begotten_prelude_2h_estoc", "begotten_prelude_2h_scrapchopper"};
+	ITEM.randomWeaponsSATANrekh = {"begotten_1h_twistedmachete", "begotten_1h_twistedclub", "begotten_1h_warpedsword", "begotten_spear_ironspear", "begotten_1h_scimitar"};
+	ITEM.randomWeaponsSATANrekhheavy = {"begotten_2h_longsword", "begotten_prelude_2h_bludgeoner", "begotten_prelude_2h_estoc", "begotten_prelude_polearm_goedandag", "begotten_prelude_polearm_mancatcher"};
 
 -- Called when a player uses the item.
 function ITEM:OnUse(player, itemEntity)
@@ -391,7 +392,10 @@ function ITEM:OnUse(player, itemEntity)
         timer.Simple(0.5, function()
             Clockwork.chatBox:SetMultiplier(1.0)
         end)
-    end 
+    end
+    for i = 1, 2 do
+		player:GiveItem(Clockwork.item:CreateInstance("splint"), true);
+	end
     player:GiveItem(Clockwork.item:CreateInstance("antibiotic_paste"), true);
     player:GiveItem(Clockwork.item:CreateInstance("splint"), true);
 	if player:GetFaction() == "Goreic Warrior" then
@@ -429,7 +433,7 @@ function ITEM:OnUse(player, itemEntity)
 		player:GiveItem(Clockwork.item:CreateInstance("haralder_chainmail"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("gore_ridge_helm"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("shield14"), true);
-		for i = 1, 5 do
+		for i = 1, 3 do
 			player:GiveItem(Clockwork.item:CreateInstance("begotten_javelin_throwing_axe"), true);
 		end
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsG[math.random(1, #self.randomWeaponsG)]), true);
@@ -508,10 +512,10 @@ function ITEM:OnUse(player, itemEntity)
 		player:GiveItem(Clockwork.item:CreateInstance("warhorn"), true);
 	elseif subfaction == "Clan Grock" then
 		player:GiveItem(Clockwork.item:CreateInstance("grockling_godless_garb"), true);
-		player:GiveItem(Clockwork.item:CreateInstance("begotten_2h_great_grocklingsacredstonemaul"), true);
+		player:GiveItem(Clockwork.item:CreateInstance("begotten_2h_great_grocklingstonemaul"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("begotten_2h_great_grocklingsword"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("begotten_dagger_gorehuntingdagger"), true);
-		for i = 1, 10 do
+		for i = 1, 5 do
 			player:GiveItem(Clockwork.item:CreateInstance("stone"), true);
 		end
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharms[math.random(1, #self.randomcharms)]), true);
@@ -626,7 +630,7 @@ function ITEM:OnUse(player, itemEntity)
 			player:GiveItem(Clockwork.item:CreateInstance("gatekeeper_halfplate"), true);
 			player:GiveItem(Clockwork.item:CreateInstance("gatekeeper_helmet"), true);
 			player:GiveItem(Clockwork.item:CreateInstance("shield5"), true);
-			for i = 1, 1 do
+			for i = 1, 2 do
 				player:GiveItem(Clockwork.item:CreateInstance("begotten_javelin_pilum"), true);
 			end
 			player:GiveItem(Clockwork.item:CreateInstance(self.randomcharms[math.random(1, #self.randomcharms)]), true);
@@ -637,7 +641,11 @@ function ITEM:OnUse(player, itemEntity)
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsSATAN[math.random(1, #self.randomWeaponsSATAN)]), true);
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsSATANheavy[math.random(1, #self.randomWeaponsSATANheavy)]), true);
 		player:GiveItem(Clockwork.item:CreateInstance("elegant_robes"), true);
-		player:GiveItem(Clockwork.item:CreateInstance("ballroom_mask_ornate"), true);
+        if math.random(1, 5) == 1 then
+			player:GiveItem(Clockwork.item:CreateInstance("blackplate_helmet"), true);
+        else
+            player:GiveItem(Clockwork.item:CreateInstance("plate_helmet_mail_coif"), true);
+        end
 		player:GiveItem(Clockwork.item:CreateInstance("begotten_dagger_parryingdagger"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("shield5"), true);
 		for i = 1, 3 do
@@ -669,7 +677,7 @@ function ITEM:OnUse(player, itemEntity)
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharms[math.random(1, #self.randomcharms)]), true);
 	elseif subfaction == "Rekh-khet-sa" then
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsSATANrekh[math.random(1, #self.randomWeaponsSATANrekh)]), true);
-		player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsSATANheavy[math.random(1, #self.randomWeaponsSATANheavy)]), true);
+		player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsSATANrekhheavy[math.random(1, #self.randomWeaponsSATANrekhheavy)]), true);
 		player:GiveItem(Clockwork.item:CreateInstance("shield5"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("helldancer_robes"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("blackplate_helmet"), true);
@@ -679,10 +687,17 @@ function ITEM:OnUse(player, itemEntity)
 		for i = 1, 6 do
 			player:GiveItem(Clockwork.item:CreateInstance("skingauze"), true);
 		end
-		player:GiveItem(Clockwork.item:CreateInstance("begotten_jezail_short"), true);
-		for i = 1, 3 do
-			player:GiveItem(Clockwork.item:CreateInstance("longshot"), true);
-		end
+        if math.random(1, 4) == 1 then
+            player:GiveItem(Clockwork.item:CreateInstance("begotten_crossbow"), true);
+            for i = 1, 4 do
+                player:GiveItem(Clockwork.item:CreateInstance("iron_bolt"), true);
+            end
+        else
+			player:GiveItem(Clockwork.item:CreateInstance("begotten_jezail_short"), true);
+			for i = 1, 3 do
+				player:GiveItem(Clockwork.item:CreateInstance("longshot"), true);
+			end
+        end
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharms[math.random(1, #self.randomcharms)]), true);
 		player:GiveItem(Clockwork.item:CreateInstance("death_whistle"), true);
     elseif subfaction == "Raiders" or subfaction == "Tuners" then
@@ -732,7 +747,7 @@ local ITEM = Clockwork.item:New();
 	ITEM.randomWeaponsPheavy = {"begotten_polearm_halberd", "begotten_polearm_gatekeeperpoleaxe", "begotten_2h_great_hilllongaxe", "begotten_2h_hilllongsword", "begotten_polearm_polehammer", "begotten_polearm_pike", "begotten_2h_great_eveningstar", "begotten_prelude_2h_great_heavycleaver", "begotten_prelude_2h_exesword", "begotten_prelude_polearm_hewingspear", "begotten_prelude_2h_great_scraphacker", "begotten_prelude_2h_great_scraphalberd", "begotten_prelude_polearm_goedandag"};
 	ITEM.randomWeaponsGKheavy = {"begotten_polearm_halberd", "begotten_polearm_gatekeeperpoleaxe", "begotten_2h_exileknightsword", "begotten_polearm_polehammer", "begotten_polearm_pike", "begotten_2h_great_eveningstar", "begotten_prelude_2h_great_daneaxe", "begotten_prelude_2h_great_heavycleaver", "begotten_prelude_2h_exesword", "begotten_prelude_polearm_hewingspear", "begotten_prelude_2h_great_scraphacker", "begotten_prelude_2h_great_scraphalberd", "begotten_prelude_polearm_goedandag"};
 	ITEM.randomWeaponsGKheavySOL = {"begotten_2h_exileknightsword", "begotten_scythe_glaive", "begotten_2h_great_eveningstar", "begotten_prelude_2h_great_daneaxe", "begotten_prelude_2h_exesword"};
-	ITEM.randomWeaponsReaverFOTD = {"begotten_1h_satanicsword", "begotten_1h_satanicmace"};
+	ITEM.randomWeaponsReaverFOTD = {"begotten_1h_satanicsword", "begotten_1h_satanicmace"}; 
 	ITEM.randomWeaponsReaverFOTDS = {"begotten_1h_satanicsword", "begotten_1h_satanicmace", "begotten_spear_satanicspear", "begotten_1h_satanicshortsword"};
 	ITEM.randomWeaponsReaverFOTF = {"begotten_claws_steelclaws", "begotten_1h_blackclaw"};
 	ITEM.randomWeaponsHarald = {"begotten_2h_great_falx", "begotten_polearm_warspear", "begotten_polearm_halberd", "begotten_prelude_2h_great_heavycleaver", "begotten_prelude_2h_exesword", "begotten_prelude_polearm_hewingspear", "begotten_prelude_2h_great_scraphacker", "begotten_prelude_2h_great_scraphalberd", "begotten_prelude_polearm_goedandag"};
@@ -824,6 +839,9 @@ function ITEM:OnUse(player, itemEntity)
 		player:GiveItem(Clockwork.item:CreateInstance("goodjuice"), true);
 	end
     player:GiveItem(Clockwork.item:CreateInstance("antibiotics"), true);
+    for i = 1, 2 do
+		player:GiveItem(Clockwork.item:CreateInstance("splint"), true);
+	end
 
 	if subfaction == "Clan Gore" then
 		player:GiveItem(Clockwork.item:CreateInstance("frenzied_chainmail"), true);
@@ -842,6 +860,11 @@ function ITEM:OnUse(player, itemEntity)
 		end
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharmsG[charm1]), true);
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharmsG[charm2]), true);
+        if math.random(1, 15) == 1 then
+			player:GiveItem(Clockwork.item:CreateInstance("xolotl_catalyst"), true);
+			player:GiveItem(Clockwork.item:CreateInstance("purifying_stone"), true);
+			player:GiveItem(Clockwork.item:CreateInstance("down_catalyst"), true);
+		end
 	elseif subfaction == "Clan Harald" then
 		player:GiveItem(Clockwork.item:CreateInstance("haralder_sealord_lamellar"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("haralder_sealord_ridge_helm"), true);
@@ -857,15 +880,20 @@ function ITEM:OnUse(player, itemEntity)
 			charm2 = math.random(1, #self.randomcharmsG)
 		end
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharmsG[charm1]), true);
-		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharmsG[charm2]), true);		
+		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharmsG[charm2]), true);
+        if math.random(1, 15) == 1 then
+			player:GiveItem(Clockwork.item:CreateInstance("xolotl_catalyst"), true);
+			player:GiveItem(Clockwork.item:CreateInstance("purifying_stone"), true);
+			player:GiveItem(Clockwork.item:CreateInstance("down_catalyst"), true);
+		end
 	elseif subfaction == "Clan Shagalax" then 
 		player:GiveItem(Clockwork.item:CreateInstance("shagalaxian_scalemail"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("gore_black_steel_helm"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("begotten_1h_steelgorebattleaxe"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("shield12"), true);
-		player:GiveItem(Clockwork.item:CreateInstance("begotten_musket"), true);
-		for i = 1, 7 do
-			player:GiveItem(Clockwork.item:CreateInstance("longshot"), true);
+		player:GiveItem(Clockwork.item:CreateInstance("begotten_shagalax_double_barrel"), true);
+		for i = 1, 8 do
+			player:GiveItem(Clockwork.item:CreateInstance("grapeshot"), true);
 		end
 		local charm1 = math.random(1, #self.randomcharmsS)
 		local charm2 = math.random(1, #self.randomcharmsS)
@@ -934,6 +962,11 @@ function ITEM:OnUse(player, itemEntity)
 			player:GiveItem(Clockwork.item:CreateInstance(self.randomcharmsG[charm1]), true);
 			player:GiveItem(Clockwork.item:CreateInstance(self.randomcharmsG[charm2]), true);
 			end
+        if math.random(1, 15) == 1 then
+			player:GiveItem(Clockwork.item:CreateInstance("xolotl_catalyst"), true);
+			player:GiveItem(Clockwork.item:CreateInstance("purifying_stone"), true);
+			player:GiveItem(Clockwork.item:CreateInstance("down_catalyst"), true);
+		end
 	elseif subfaction == "Clan Crast" then
 		player:GiveItem(Clockwork.item:CreateInstance("armored_blade_druid_robes"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("crast_feather_helm"), true);
@@ -951,7 +984,18 @@ function ITEM:OnUse(player, itemEntity)
 		player:GiveItem(Clockwork.item:CreateInstance("ampoule"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("familial_catalyst"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("pantheistic_catalyst"), true);
-		player:GiveItem(Clockwork.item:CreateInstance("purifying_stone"), true);
+		player:GiveItem(Clockwork.item:CreateInstance("purifying_stone"), true); 
+        if math.random(1, 15) == 1 then
+			player:GiveItem(Clockwork.item:CreateInstance("xolotl_catalyst"), true);
+			player:GiveItem(Clockwork.item:CreateInstance("purifying_stone"), true);
+			player:GiveItem(Clockwork.item:CreateInstance("down_catalyst"), true);
+		end
+        if math.random(1, 7) == 1 then
+            player:GiveItem(Clockwork.item:CreateInstance("pantheistic_catalyst"), true);
+            player:GiveItem(Clockwork.item:CreateInstance("familial_catalyst"), true);
+            player:GiveItem(Clockwork.item:CreateInstance("trinity_catalyst"), true); 
+            player:GiveItem(Clockwork.item:CreateInstance("begotten_2h_quarterstaff"), true);
+        end
 		player:GiveItem(Clockwork.item:CreateInstance("warhorn"), true);
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsG[math.random(1, #self.randomWeaponsG)]), true);
         player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsGheavy[math.random(1, #self.randomWeaponsGheavy)]), true);
@@ -1003,6 +1047,11 @@ function ITEM:OnUse(player, itemEntity)
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharmsSERVUS[charm1]), true);
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharmsSERVUS[charm2]), true);
         player:GiveItem(Clockwork.item:CreateInstance("handheld_radio"), true); 
+        if math.random(1, 15) == 1 then
+			player:GiveItem(Clockwork.item:CreateInstance("xolotl_catalyst"), true);
+			player:GiveItem(Clockwork.item:CreateInstance("purifying_stone"), true);
+			player:GiveItem(Clockwork.item:CreateInstance("down_catalyst"), true);
+		end
 		
 		--player:GiveItem(Clockwork.item:CreateInstance("handheld_radio"), true);
 		--player:GiveItem(Clockwork.item:CreateInstance("laudanum"), true);
@@ -1049,6 +1098,11 @@ function ITEM:OnUse(player, itemEntity)
 			else
 				player:GiveItem(Clockwork.item:CreateInstance("helm_of_atonement"), true);
 			end
+            if math.random(1, 15) == 1 then
+				player:GiveItem(Clockwork.item:CreateInstance("xolotl_catalyst"), true);
+				player:GiveItem(Clockwork.item:CreateInstance("purifying_stone"), true);
+				player:GiveItem(Clockwork.item:CreateInstance("down_catalyst"), true);
+			end
 			player:GiveItem(Clockwork.item:CreateInstance(self.randomcharms[math.random(1, #self.randomcharms)]), true);
         	player:GiveItem(Clockwork.item:CreateInstance("handheld_radio"), true);
 			for i = 1, 3 do
@@ -1090,12 +1144,23 @@ function ITEM:OnUse(player, itemEntity)
 			end
 			player:GiveItem(Clockwork.item:CreateInstance(self.randomcharmsSERVUS[charm1]), true);
 			player:GiveItem(Clockwork.item:CreateInstance(self.randomcharmsSERVUS[charm2]), true);
-        	player:GiveItem(Clockwork.item:CreateInstance("handheld_radio"), true); 
+        	player:GiveItem(Clockwork.item:CreateInstance("handheld_radio"), true);
+            if math.random(1, 15) == 1 then
+				player:GiveItem(Clockwork.item:CreateInstance("xolotl_catalyst"), true);
+				player:GiveItem(Clockwork.item:CreateInstance("purifying_stone"), true);
+				player:GiveItem(Clockwork.item:CreateInstance("down_catalyst"), true);
+			end
 		end
 	elseif subfaction == "Praeventor" then
 		player:GiveItem(Clockwork.item:CreateInstance("old_soldier_cuirass"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("old_soldier_helm"), true);
+        player:GiveItem(Clockwork.item:CreateInstance("shield4"), true);
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsGK[math.random(1, #self.randomWeaponsGK)]), true);
+        if math.random(1, 15) == 1 then
+			player:GiveItem(Clockwork.item:CreateInstance("xolotl_catalyst"), true);
+			player:GiveItem(Clockwork.item:CreateInstance("purifying_stone"), true);
+			player:GiveItem(Clockwork.item:CreateInstance("down_catalyst"), true);
+		end
 		local charm1 = math.random(1, #self.randomcharmsOutrider)
 		local charm2 = math.random(1, #self.randomcharmsOutrider)
 		while charm2 == charm1 do
@@ -1103,7 +1168,7 @@ function ITEM:OnUse(player, itemEntity)
 		end
         if math.random(1, 5) == 1 then
            	player:GiveItem(Clockwork.item:CreateInstance("begotten_blunderbuss"), true); 
-           	for i = 1, 2 do
+           	for i = 1, 4 do
              	player:GiveItem(Clockwork.item:CreateInstance("grapeshot"), true);
            	end
         else
@@ -1112,6 +1177,7 @@ function ITEM:OnUse(player, itemEntity)
 				player:GiveItem(Clockwork.item:CreateInstance("iron_bolt"), true);
 			end
         end
+        player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsGKheavy[math.random(1, #self.randomWeaponsGKheavy)]), true);
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharmsOutrider[charm1]), true);
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharmsOutrider[charm2]), true);
         player:GiveItem(Clockwork.item:CreateInstance("handheld_radio"), true);
@@ -1129,6 +1195,11 @@ function ITEM:OnUse(player, itemEntity)
 			player:GiveItem(Clockwork.item:CreateInstance("shield11"), true);
 			player:GiveItem(Clockwork.item:CreateInstance("begotten_1h_solflail"), true);
 			player:GiveItem(Clockwork.item:CreateInstance("orthodoxist_battle_monk_robes"), true);
+            if math.random(1, 15) == 1 then
+				player:GiveItem(Clockwork.item:CreateInstance("xolotl_catalyst"), true);
+				player:GiveItem(Clockwork.item:CreateInstance("purifying_stone"), true);
+				player:GiveItem(Clockwork.item:CreateInstance("down_catalyst"), true);
+			end
 			if math.random (1,2) == 1 then
 				player:GiveItem(Clockwork.item:CreateInstance("helm_of_repentance"), true);
 			else
@@ -1153,13 +1224,21 @@ function ITEM:OnUse(player, itemEntity)
                 player:GiveItem(Clockwork.item:CreateInstance("vexillifer_gatekeeper_plate"), true); 
                 player:GiveItem(Clockwork.item:CreateInstance("begotten_polearm_glazicbanner"), true);
             else
-        		if math.random(1, 4) == 1 then
+        		if math.random(1, 8) == 1 then
 					player:GiveItem(Clockwork.item:CreateInstance("high_gatekeeper_heavy_plate"), true);
-        		else
+        		elseif math.random(1, 8) == 2 then
         	    	player:GiveItem(Clockwork.item:CreateInstance("fine_gatekeeper_plate"), true);
 					player:GiveItem(Clockwork.item:CreateInstance("fine_gatekeeper_helmet"), true);
-        		end
+        		else
+                    player:GiveItem(Clockwork.item:CreateInstance("gatekeeper_plate"), true);
+					player:GiveItem(Clockwork.item:CreateInstance("gatekeeper_helmet"), true);
+                end
             end
+            if math.random(1, 15) == 1 then
+				player:GiveItem(Clockwork.item:CreateInstance("xolotl_catalyst"), true);
+				player:GiveItem(Clockwork.item:CreateInstance("purifying_stone"), true);
+				player:GiveItem(Clockwork.item:CreateInstance("down_catalyst"), true);
+			end
 			player:GiveItem(Clockwork.item:CreateInstance("shield11"), true);
 			if math.random(1, 5) == 1 then
 				player:GiveItem(Clockwork.item:CreateInstance("begotten_musket"), true);
@@ -1303,7 +1382,7 @@ function ITEM:OnUse(player, itemEntity)
 			player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsSATAN[math.random(1, #self.randomWeaponsSATAN)]), true);
 			player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsSATANheavy[math.random(1, #self.randomWeaponsSATANheavy)]), true);
 			player:GiveItem(Clockwork.item:CreateInstance("shield8"), true);
-			if math.random (1, 3) == 1 then
+			if math.random (1, 8) == 1 then
             	player:GiveItem(Clockwork.item:CreateInstance("hellspike_armor"), true);
             else
                 player:GiveItem(Clockwork.item:CreateInstance("hellplate_armor"), true);
@@ -1351,7 +1430,7 @@ function ITEM:OnUse(player, itemEntity)
 		for i = 1, 3 do
 			player:GiveItem(Clockwork.item:CreateInstance("begotten_javelin_throwing_dagger"), true);
 		end
-		if math.random(1, 10) == 1 then
+		if math.random(1, 15) == 1 then
 			player:GiveItem(Clockwork.item:CreateInstance("ice_catalyst"), true);
 			player:GiveItem(Clockwork.item:CreateInstance("pentagram_catalyst"), true);
 			player:GiveItem(Clockwork.item:CreateInstance("ice_catalyst"), true);
@@ -1369,7 +1448,8 @@ function ITEM:OnUse(player, itemEntity)
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsSATANrekh[math.random(1, #self.randomWeaponsSATANrekh)]), true);
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsSATANrekhheavy[math.random(1, #self.randomWeaponsSATANrekhheavy)]), true);
 		player:GiveItem(Clockwork.item:CreateInstance("shield8"), true);
-		player:GiveItem(Clockwork.item:CreateInstance("wraith_armor"), true);
+		player:GiveItem(Clockwork.item:CreateInstance("hellplate_armor"), true);
+        player:GiveItem(Clockwork.item:CreateInstance("hellplate_helmet"), true);
 		for i = 1, 8 do
 			player:GiveItem(Clockwork.item:CreateInstance("skintape"), true);
 		end
@@ -1491,7 +1571,7 @@ local ITEM = Clockwork.item:New();
 	ITEM.randomWeaponsGheavy = {"begotten_2h_great_haralderwaraxe", "begotten_2h_great_falx", "begotten_2h_claymore", "begotten_2h_great_darklanderbardiche"};
 	ITEM.randomWeaponsReaverFOTDheavy = {"begotten_2h_great_satanicmaul", "begotten_2h_sataniclongsword", "begotten_2h_unholysigilsword", "begotten_2h_great_darklanderbardiche"};
 	ITEM.randomWeaponsReaverFOTDheavyP = {"begotten_2h_sataniclongsword", "begotten_2h_unholysigilsword", "begotten_polearm_warspear", "begotten_polearm_pike", "begotten_polearm_polehammer", "begotten_polearm_halberd" };
-	ITEM.randomWeaponsReaverFOTFheavy = {"begotten_2h_great_falx", "begotten_2h_great_haralderwaraxe", "begotten_prelude_2h_great_heavycleaver", "begotten_2h_great_darklanderbardiche"};
+	ITEM.randomWeaponsReaverFOTFheavy = {"begotten_2h_great_falx", "begotten_2h_great_haralderwaraxe", "begotten_2h_great_darklanderbardiche"};
 	ITEM.randomWeaponsSATAN = {"begotten_1h_satanicsword", "begotten_1h_satanicmace", "begotten_1h_shard"};
 	ITEM.randomWeaponsSATANheavy = {"begotten_2h_great_satanicmaul", "begotten_2h_sataniclongsword", "begotten_2h_great_darklanderbardiche", "begotten_2h_unholysigilsword"};
 	ITEM.randomWeaponsSATANrekhheavy = {"begotten_2h_great_satanicmaul", "begotten_2h_sataniclongsword", "begotten_2h_great_darklanderbardiche", "begotten_polearm_warspear", "begotten_polearm_pike", "begotten_polearm_polehammer", "begotten_polearm_halberd"};
@@ -1674,9 +1754,9 @@ function ITEM:OnUse(player, itemEntity)
 		else
 			player:GiveItem(Clockwork.item:CreateInstance("shield12"), true);
 		end
-		player:GiveItem(Clockwork.item:CreateInstance("begotten_musket"), true);
-		for i = 1, 10 do
-			player:GiveItem(Clockwork.item:CreateInstance("longshot"), true);
+		player:GiveItem(Clockwork.item:CreateInstance("begotten_shagalax_double_barrel"), true);
+		for i = 1, 14 do
+			player:GiveItem(Clockwork.item:CreateInstance("grapeshot"), true);
 		end
 		local charm1 = math.random(1, #self.randomcharmsS)
 		local charm2 = math.random(1, #self.randomcharmsS)
@@ -1884,6 +1964,12 @@ function ITEM:OnUse(player, itemEntity)
 		for i = 1, 2 do
 			player:GiveItem(Clockwork.item:CreateInstance("elysian_catalyst"), true);
 		end
+        if math.random(1, 5) == 1 then
+            player:GiveItem(Clockwork.item:CreateInstance("pantheistic_catalyst"), true);
+            player:GiveItem(Clockwork.item:CreateInstance("familial_catalyst"), true);
+            player:GiveItem(Clockwork.item:CreateInstance("trinity_catalyst"), true); 
+            player:GiveItem(Clockwork.item:CreateInstance("begotten_2h_quarterstaff"), true);
+        end
 		if math.random(1, 15) == 1 then
 			player:GiveItem(Clockwork.item:CreateInstance("begotten_sacrificial_frozenfatherlandaxe"), true);
 			player:GiveItem(Clockwork.item:CreateInstance("warding_talisman"), true);
@@ -2054,7 +2140,7 @@ function ITEM:OnUse(player, itemEntity)
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharmsSERVUS[charm1]), true);
 		player:GiveItem(Clockwork.item:CreateInstance("holy_sigils"), true);
 		if math.random(1, 15) == 1 then
-			player:GiveItem(Clockwork.item:CreateInstance("begotten_corpsecrank"), true);
+			player:GiveItem(Clockwork.item:CreateInstance("begotten_corpsecrank"), true); 
 			for i = 1, 18 do
 				player:GiveItem(Clockwork.item:CreateInstance("grapeshot"), true);	
 			end
@@ -2069,6 +2155,12 @@ function ITEM:OnUse(player, itemEntity)
 				player:GiveItem(Clockwork.item:CreateInstance("longshot"), true);
 			end
 		end
+        if math.random(1, 20) == 1 then
+			player:GiveItem(Clockwork.item:CreateInstance("begotten_musket_repeating"), true); 
+			for i = 1, 18 do
+				player:GiveItem(Clockwork.item:CreateInstance("longshot"), true);	
+			end
+        end
 		player:GiveItem(Clockwork.item:CreateInstance("holy_spirit"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("light_catalyst"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("trinity_catalyst"), true);
@@ -2114,6 +2206,7 @@ function ITEM:OnUse(player, itemEntity)
 					player:GiveItem(Clockwork.item:CreateInstance("helm_of_atonement"), true);
 				end
 			end
+            player:GiveItem(Clockwork.item:CreateInstance("cw_lantern"), true);
 			player:GiveItem(Clockwork.item:CreateInstance(self.randomcharms[math.random(1, #self.randomcharms)]), true);
         	player:GiveItem(Clockwork.item:CreateInstance("handheld_radio"), true);
 			for i = 1, 4 do
@@ -2126,7 +2219,7 @@ function ITEM:OnUse(player, itemEntity)
 			end
 			player:GiveItem(Clockwork.item:CreateInstance(self.randomcharms[charm1]), true);
 			player:GiveItem(Clockwork.item:CreateInstance(self.randomcharms[charm2]), true);
-			if math.random (1,5) == 1 then
+			if math.random (1,8) == 1 then
 				player:GiveItem(Clockwork.item:CreateInstance("light_catalyst"), true);
 				player:GiveItem(Clockwork.item:CreateInstance("light_catalyst"), true);
 				player:GiveItem(Clockwork.item:CreateInstance("holy_spirit"), true);
@@ -2609,12 +2702,16 @@ function ITEM:OnUse(player, itemEntity)
 			player:GiveItem(Clockwork.item:CreateInstance("eternal_heavens_tier4"), true);
         end
     elseif subfaction == "Knights of Sol" then
-        if math.random(1,10) == 1 then
-            player:GiveItem(Clockwork.item:CreateInstance("knight_justicar_helmet"), true); 
-            player:GiveItem(Clockwork.item:CreateInstance("knight_justicar_plate"), true);
-        else
-            player:GiveItem(Clockwork.item:CreateInstance("knight_plate"), true); 
-            player:GiveItem(Clockwork.item:CreateInstance("knight_helmet"), true);
+        if math.random (1, 20) == 1 then 
+            player:GiveItem(Clockwork.item:CreateInstance("grand_knight_plate"), true); 
+        else    
+        	if math.random(1,10) == 1 then
+            	player:GiveItem(Clockwork.item:CreateInstance("knight_justicar_helmet"), true); 
+            	player:GiveItem(Clockwork.item:CreateInstance("knight_justicar_plate"), true);
+        	else
+            	player:GiveItem(Clockwork.item:CreateInstance("knight_plate"), true); 
+            	player:GiveItem(Clockwork.item:CreateInstance("knight_helmet"), true);
+        	end
         end
     player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsGK[math.random(1, #self.randomWeaponsGK)]), true); 
         if math.random(1, 20) == 1 then
@@ -2855,26 +2952,20 @@ function ITEM:OnUse(player, itemEntity)
 		while charm2 == charm1 do
 			charm2 = math.random(1, #self.randomcharms)
 		end
-        if math.random(1,10) == 1 then
-            player:GiveItem(Clockwork.item:CreateInstance("elysian_catalyst"), true);
-        	player:GiveItem(Clockwork.item:CreateInstance("trinity_catalyst"), true);
-        	player:GiveItem(Clockwork.item:CreateInstance("belphegor_catalyst"), true);
-        end
+        player:GiveItem(Clockwork.item:CreateInstance("elysian_catalyst"), true);
+        player:GiveItem(Clockwork.item:CreateInstance("trinity_catalyst"), true);
+        player:GiveItem(Clockwork.item:CreateInstance("belphegor_catalyst"), true);
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharms[charm1]), true);
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharms[charm2]), true);
 		player:GiveItem(Clockwork.item:CreateInstance("begotten_crossbow"), true);
 		for i = 1, 10 do
 			player:GiveItem(Clockwork.item:CreateInstance("iron_bolt"), true);
 		end
-        if math.random(1,4) == 1 then
-    		for i = 1, 5 do
-        		player:GiveItem(Clockwork.item:CreateInstance("begotten_javelin_throwing_dagger"), true); 
-    		end
-		elseif math.random(1,3) == 2 then
+        if math.random(1,3) == 2 then
     		for i = 1, 2 do
         		player:GiveItem(Clockwork.item:CreateInstance("begotten_javelin_iron_javelin"), true);
     		end
-		elseif math.random(1,4) == 3 then
+		elseif math.random(1,3) == 3 then
     		for i = 1, 2 do
         		player:GiveItem(Clockwork.item:CreateInstance("begotten_javelin_pilum"), true);
     		end
@@ -2918,8 +3009,12 @@ function ITEM:OnUse(player, itemEntity)
 
 	if subfaction == "Raiders" or subfaction == "Tuners" then
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsP[math.random(1, #self.randomWeaponsP)]), true);
-		player:GiveItem(Clockwork.item:CreateInstance("deadlandershield"), true);
-		player:GiveItem(Clockwork.item:CreateInstance("deadlander_officer_lamellar"), true);
+        if math.random (1, 2) == 1 then 
+            player:GiveItem(Clockwork.item:CreateInstance("shield19"), true);
+        else
+			player:GiveItem(Clockwork.item:CreateInstance("deadlandershield"), true);
+        end
+		player:GiveItem(Clockwork.item:CreateInstance("deadlander_khan_lamellar"), true);
 		player:GiveItem(Clockwork.item:CreateInstance("kheshig_helmet"), true); 
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomWeaponsPheavy[math.random(1, #self.randomWeaponsPheavy)]), true);
 		local charm1 = math.random(1, #self.randomcharms)
@@ -2927,26 +3022,20 @@ function ITEM:OnUse(player, itemEntity)
 		while charm2 == charm1 do
 			charm2 = math.random(1, #self.randomcharms)
 		end
-        if math.random(1,10) == 1 then
-            player:GiveItem(Clockwork.item:CreateInstance("elysian_catalyst"), true);
-        	player:GiveItem(Clockwork.item:CreateInstance("trinity_catalyst"), true);
-        	player:GiveItem(Clockwork.item:CreateInstance("belphegor_catalyst"), true);
-        end
+        player:GiveItem(Clockwork.item:CreateInstance("elysian_catalyst"), true);
+        player:GiveItem(Clockwork.item:CreateInstance("trinity_catalyst"), true);
+        player:GiveItem(Clockwork.item:CreateInstance("belphegor_catalyst"), true);
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharms[charm1]), true);
 		player:GiveItem(Clockwork.item:CreateInstance(self.randomcharms[charm2]), true);
 		player:GiveItem(Clockwork.item:CreateInstance("begotten_crossbow"), true);
 		for i = 1, 10 do
 			player:GiveItem(Clockwork.item:CreateInstance("iron_bolt"), true);
 		end
-        if math.random(1,4) == 1 then
-    		for i = 1, 5 do
-        		player:GiveItem(Clockwork.item:CreateInstance("begotten_javelin_throwing_dagger"), true); 
-    		end
-		elseif math.random(1,3) == 2 then
+        if math.random(1,3) == 2 then
     		for i = 1, 2 do
         		player:GiveItem(Clockwork.item:CreateInstance("begotten_javelin_iron_javelin"), true);
     		end
-		elseif math.random(1,4) == 3 then
+		elseif math.random(1,3) == 3 then
     		for i = 1, 2 do
         		player:GiveItem(Clockwork.item:CreateInstance("begotten_javelin_pilum"), true);
     		end
@@ -2969,7 +3058,7 @@ local ITEM = Clockwork.item:New();
 	ITEM.category = "Other";
 	ITEM.description = "A duffel bag containing tier 4 equipment for raiders who belive in eternal heavens.";
 	ITEM.weight = 5;
-	ITEM.randomWeaponsP = {"begotten_1h_steelarmingsword", "begotten_1h_satanicsword", "begotten_1h_butterflysword", "begotten_1h_shard"};
+	ITEM.randomWeaponsP = {"begotten_1h_steelarmingsword", "begotten_1h_satanicsword", "begotten_1h_shard"};
 	ITEM.randomWeaponsPheavy = {"begotten_2h_steel_longjian", "begotten_polearm_halberd", "begotten_polearm_gatekeeperpoleaxe", "begotten_2h_claymore", "begotten_2h_unholysigilsword", "begotten_2h_sataniclongsword", "begotten_2h_swordstaff", "begotten_prelude_polearm_hewingspear", "begotten_prelude_2h_great_scraphalberd"};
 	ITEM.randomcharms = {"boot_contortionist", "hurlers_talisman", "ring_penetration", "ring_vitality", "ring_protection_gold", "bandolier", "ring_distorted"};
 	
@@ -3028,16 +3117,12 @@ function ITEM:OnUse(player, itemEntity)
         for i = 1, 2 do
             player:GiveItem(Clockwork.item:CreateInstance("elysian_catalyst"), true);
         end
-        if math.random(1,4) == 1 then
-    		for i = 1, 6 do
-        		player:GiveItem(Clockwork.item:CreateInstance("begotten_javelin_throwing_dagger"), true); 
-    		end
-		elseif math.random(1,3) == 2 then
-    		for i = 1, 3 do
+        if math.random(1,3) == 2 then
+    		for i = 1, 4 do
         		player:GiveItem(Clockwork.item:CreateInstance("begotten_javelin_iron_javelin"), true);
     		end
-		elseif math.random(1,4) == 3 then
-    		for i = 1, 3 do
+		elseif math.random(1,3) == 3 then
+    		for i = 1, 4 do
         		player:GiveItem(Clockwork.item:CreateInstance("begotten_javelin_pilum"), true);
     		end
 		else
@@ -3062,7 +3147,7 @@ local ITEM = Clockwork.item:New();
 	ITEM.category = "Other";
 	ITEM.description = "A duffel bag containing tier 4 equipment for raiders who belive in eternal heavens.";
 	ITEM.weight = 5;
-	ITEM.randomWeaponsP = {"begotten_1h_steelarmingsword", "begotten_1h_butterflysword"};
+	ITEM.randomWeaponsP = {"begotten_1h_steelarmingsword"};
 	ITEM.randomWeaponsPheavy = {"begotten_2h_steel_longjian", "begotten_polearm_halberd", "begotten_polearm_gatekeeperpoleaxe", "begotten_2h_swordstaff", "begotten_polearm_halberd"};
 	ITEM.randomcharms = {"boot_contortionist", "hurlers_talisman", "ring_penetration", "ring_vitality", "ring_protection_gold", "bandolier", "ring_distorted"};
 	
@@ -3109,16 +3194,12 @@ function ITEM:OnUse(player, itemEntity)
         end
         player:GiveItem(Clockwork.item:CreateInstance("up_catalyst"), true);
         player:GiveItem(Clockwork.item:CreateInstance("up_catalyst"), true);
-        if math.random(1,4) == 1 then
-    		for i = 1, 6 do
-        		player:GiveItem(Clockwork.item:CreateInstance("begotten_javelin_throwing_dagger"), true); 
-    		end
-		elseif math.random(1,3) == 2 then
-    		for i = 1, 3 do
+		if math.random(1,3) == 2 then
+    		for i = 1, 4 do
         		player:GiveItem(Clockwork.item:CreateInstance("begotten_javelin_iron_javelin"), true);
     		end
-		elseif math.random(1,4) == 3 then
-    		for i = 1, 3 do
+		elseif math.random(1,3) == 3 then
+    		for i = 1, 4 do
         		player:GiveItem(Clockwork.item:CreateInstance("begotten_javelin_pilum"), true);
     		end
 		else
