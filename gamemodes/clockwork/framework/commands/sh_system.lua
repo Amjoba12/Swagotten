@@ -574,6 +574,15 @@ local COMMAND = Clockwork.command:New("Respawn");
 
 	-- Called when the command has been run.
 	function COMMAND:OnRun(player, arguments)
+		-- Получаем текущее действие игрока
+		local action = Clockwork.player:GetAction(player)
+		
+		-- ПРОВЕРКА: не находится ли игрок в состоянии смерти
+		if (action == "die" or action == "die_bleedout") then
+			Clockwork.player:Notify(player, "You cannot respawn while dying!")
+			return
+		end
+		
 		-- Проверяем, жив ли игрок
 		if (player:Alive()) then
 			Clockwork.player:Notify(player, "You are already alive!");
@@ -635,11 +644,8 @@ local COMMAND = Clockwork.command:New("Respawn");
 			-- СТАВИМ ПОЛНОЕ СТИМОВСКОЕ ИМЯ
 			local steamName = player:SteamName()
 			if steamName and steamName ~= "" then
-				-- Прямая установка имени через SetName (должно сохранить полное имя)
 				Clockwork.player:SetName(player, steamName)
 				player:SetCharacterData("RealName", steamName)
-				
-				-- Дополнительная синхронизация через NetVar для клиента
 				player:SetNetVar("NameOverride", steamName)
 			end
 			
@@ -679,7 +685,18 @@ local COMMAND = Clockwork.command:New("Respawn");
 					player:SetNWInt("Stamina", maxStamina)
 				end
 			end
-						
+			
+			-- Восстанавливаем мелевую стамину
+			if cwMelee then
+				local maxPoise = 100
+				if player.GetMaxPoise then
+					maxPoise = player:GetMaxPoise()
+				end
+				if player.SetNWInt then
+					player:SetNWInt("meleeStamina", maxPoise)
+				end
+			end
+			
 			-- Восстанавливаем стабильность
 			local maxStability = player:GetMaxStability()
 			if maxStability and player.SetNWInt then
@@ -760,6 +777,7 @@ local COMMAND = Clockwork.command:New("Respawn");
 			-- Сбрасываем флаг COLLECTED_GEAR и таймер
 			player:SetCharacterData("collectedGear", false)
 			player:SetLocalVar("collectedGear", false)
+			player:SetData("nextGear", 0)
 			
 			-- Обновляем параметры скорости
 			hook.Run("RunModifyPlayerSpeed", player, player.cwInfoTable, true)
