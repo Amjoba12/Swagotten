@@ -1337,7 +1337,7 @@ AttackTables.LungeMineAttackTable = {
 	["delay"] = 1.35,
 	["striketime"] = 0.55,
 	["meleearc"] = 15,
-	["meleerange"] = 500,
+	["meleerange"] = 1100,
     ["altmeleerange"] = 500,
 	["punchstrength"] = Angle(1,3,1),
 };
