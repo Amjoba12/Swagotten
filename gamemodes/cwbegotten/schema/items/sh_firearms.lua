@@ -29,6 +29,30 @@ local ITEM = Clockwork.item:New("firearm_base");
 ITEM:Register();
 
 local ITEM = Clockwork.item:New("firearm_base");
+    ITEM.name = "Shagalax Double Barrel";
+    ITEM.model = "models/arxweapon/doubleshotgun.mdl";
+    ITEM.weight = 2;
+    ITEM.uniqueID = "begotten_shagalax_double_barrel";
+    ITEM.description = "A double-barrel shotgun designed by a perticiularily ingenious Shagalaxian smith long time ago. Made out of wood and scrap metal it's simple yet effective solution for corpsing. A handful of mechanics in the Scrapper warbands are able to produce and use this formidable weapon.";
+    ITEM.iconoverride = "materials/begotten/ui/itemicons/firearms/double_barrel_shotgun.png"
+    ITEM.isAttachment = true;
+    ITEM.attachmentBone = "ValveBiped.Bip01_Spine";
+    ITEM.attachmentOffsetAngles = Angle(0, 342, 6.96);
+    ITEM.attachmentOffsetVector = Vector(0.71, 3, 7.07);
+
+    ITEM.ammoCapacity = 2; 
+    ITEM.ammoTypes = {"Grapeshot"};
+    ITEM.firearmType = "Shotgun";
+    ITEM.reloadTime = 8; -- Seconds
+    ITEM.reloadSounds = {"weapons/double_barrel/double_barrel_open_barrel.wav", "weapons/double_barrel/double_barrel_dump_shells.wav", "weapons/double_barrel/double_barrel_insert_shell1.wav", "weapons/double_barrel/double_barrel_insert_shell2.wav", "weapons/double_barrel/double_barrel_close_back.wav", "weapons/double_barrel/double_barrel_bolt_back.wav", "weapons/double_barrel/double_barrel_bolt_forward.wav"};
+
+    ITEM.excludeSubfactions = {"Philimaxio", "Knights of Sol", "Scrap Knight"};
+    ITEM.components = {breakdownType = "meltdown", items = {"iron_chunks", "steel_chunks", "scrap", "wood"}};
+	ITEM.requiredbeliefs = {"young_son"};
+	ITEM.kinisgerOverride = true;
+ITEM:Register();
+
+local ITEM = Clockwork.item:New("firearm_base");
 	ITEM.name = "Colt";
 	ITEM.model = "models/weapons/doi/w_1911.mdl";
 	ITEM.weight = 1.5;
