@@ -377,36 +377,37 @@ function cwMelee:DoMeleeHitEffects(entity, attacker, inflictor, position, origin
 	end;
 end;
 
-local bannerIds = {
-	"begotten_polearm_glazicbanner",
-	"begotten_polearm_hillkeepersignum",
-	"begotten_scrappers_guitar",
-}
-
-	if(weapon.bannerType) then 
-		if weapon:GetClass() == "begotten_scrappers_guitar" then
-			if not player:IsWeaponRaised() or player:GetNetVar("ThrustStance") then
-				return false
+function cwMelee:PlayerHasBanner(player)
+	local weapon = player:GetActiveWeapon()
+	if(!IsValid(weapon)) then return false end
+	if(#weapon:GetNW2String("activeShield", "") > 0) then return false end
+	
+	local bannerIds = {
+		"begotten_polearm_glazicbanner",
+		"begotten_polearm_hillkeepersignum",
+		"begotten_scrappers_guitar",
+	}
+	
+		if(weapon.bannerType) then 
+			if weapon:GetClass() == "begotten_scrappers_guitar" then
+				if not player:IsWeaponRaised() or player:GetNetVar("ThrustStance") then
+					return false
+				end
+			end
+			
+			return weapon
+		else
+			-- If the player's armor has Blessing of the Banner, they don't need the banner actively out in order to have the effect.
+			local clothes = player:GetClothesEquipped()
+			if(clothes and clothes.attributes and table.HasValue(clothes.attributes, "banner_blessing")) then
+				for _, v in pairs(bannerIds) do
+					local wep = player:GetWeapon(v)
+					if(IsValid(wep)) then return wep end
+	
+				end
 			end
 		end
-		
-		return weapon
-	else
-		-- If the player's armor has Blessing of the Banner, they don't need the banner actively out in order to have the effect.
-		local clothes = player:GetClothesEquipped()
-		if(clothes and clothes.attributes and table.HasValue(clothes.attributes, "banner_blessing")) then
-			for _, v in pairs(bannerIds) do
-				local wep = player:GetWeapon(v)
-				if(IsValid(wep)) then return wep end
-
-			end
-
-		end
-
-	end
-
-	return false
-
+		return false
 end
 
 local bannerDistance = (824 * 824);
